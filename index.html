@@ -1106,26 +1106,38 @@
                     </div>
                 </div>
 
-                <form class="space-y-5 bg-gray-50 p-4 md:p-6 border-2 border-black w-full">
+                <form action="https://formsubmit.co/sathwik677@gmail.com" method="POST"
+                    class="space-y-5 bg-gray-50 p-4 md:p-6 border-2 border-black w-full">
+
+                    <!-- Prevent Spam -->
+                    <input type="hidden" name="_captcha" value="false">
+
+                    <!-- Optional: Redirect after submit -->
+                    <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Identity</label>
-                        <input type="text" placeholder="NAME / COMPANY"
+                        <input type="text" name="identity" required placeholder="NAME / COMPANY"
                             class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover w-full">
                     </div>
+
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Coordinates</label>
-                        <input type="email" placeholder="EMAIL ADDRESS"
+                        <input type="email" name="email" required placeholder="EMAIL ADDRESS"
                             class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover w-full">
                     </div>
+
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Transmission</label>
-                        <textarea rows="4" placeholder="PROJECT DETAILS..."
+                        <textarea name="message" rows="4" required placeholder="PROJECT DETAILS..."
                             class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover w-full"></textarea>
                     </div>
+
                     <button type="submit"
                         class="w-full bg-neo-blue text-white font-black text-lg md:text-xl py-3 md:py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
                         TRANSMIT DATA
                     </button>
+
                 </form>
             </div>
         </div>
