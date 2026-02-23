@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- SEO Meta Tags -->
     <meta name="description"
         content="Arham | Professional Full Stack Developer specializing in high-performance NeoBrutalist web experiences. Let's build the future with raw aesthetics.">
     <meta name="keywords"
@@ -13,7 +12,6 @@
     <meta name="author" content="Arham">
     <link rel="canonical" href="https://arham-portfolio-v2.netlify.app/">
 
-    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://arham-portfolio-v2.netlify.app/">
     <meta property="og:title" content="ARHAM | Full Stack Brutalist">
@@ -21,7 +19,6 @@
         content="Professional Full Stack Developer specializing in high-performance NeoBrutalist web experiences.">
     <meta property="og:image" content="https://arham-portfolio-v2.netlify.app/Assets/images/og-image.png">
 
-    <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://arham-portfolio-v2.netlify.app/">
     <meta property="twitter:title" content="ARHAM | Full Stack Brutalist">
@@ -29,7 +26,6 @@
         content="Professional Full Stack Developer specializing in high-performance NeoBrutalist web experiences.">
     <meta property="twitter:image" content="https://arham-portfolio-v2.netlify.app/Assets/images/og-image.png">
 
-    <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
                 'gtm.start':
@@ -38,16 +34,13 @@
                 j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
                     'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-TLNG322R');</script>
-    <!-- End Google Tag Manager -->
     <title>SATHWIK | Full Stack Brutalist</title>
 
-    <!-- Theme & Performance -->
     <meta name="theme-color" content="#121212">
     <link rel="preload"
         href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Space+Grotesk:wght@800&display=swap"
         as="style">
 
-    <!-- JSON-LD Structured Data for Search Engines -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -109,14 +102,19 @@
     <style>
         /* Base Styles */
         body {
-            cursor: none;
-            /* We use a custom cursor */
             background-color: #FFFDF5;
             background-image:
                 radial-gradient(#000 1px, transparent 1px),
                 linear-gradient(to right, #e5e5e5 1px, transparent 1px),
                 linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
             background-size: 40px 40px, 100px 100px, 100px 100px;
+        }
+
+        /* Only hide cursor on devices with a mouse, to fix touch interactions on mobile */
+        @media (pointer: fine) {
+            body {
+                cursor: none;
+            }
         }
 
         /* Custom Cursor */
@@ -211,15 +209,30 @@
                 transform: translate(0)
             }
         }
+
+        /* Mobile Menu Animation */
+        #mobile-menu.active {
+            display: flex;
+            animation: slideIn 0.3s ease-out forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(-100%);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
     </style>
 </head>
 
 <body class="text-neo-black font-display antialiased selection:bg-neo-black selection:text-neo-yellow">
-    <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
-    <!-- End Google Tag Manager (noscript) -->
-
     <div id="cursor" class="w-6 h-6 bg-white rounded-full border-2 border-black hidden lg:block"></div>
 
     <div class="fixed top-0 left-0 h-2 bg-neo-green z-[60] border-b-2 border-black" id="progressBar" style="width: 0%">
@@ -245,8 +258,36 @@
                     class="px-3 py-1 font-mono font-bold text-sm bg-neo-yellow border border-black hover:bg-neo-pink transition-colors cursor-hover">HIRE
                     ME</a>
             </div>
+
+            <button id="mobile-menu-toggle"
+                class="md:hidden bg-neo-white border-2 border-black px-3 py-2 shadow-hard hover:bg-neo-yellow transition-colors cursor-hover flex flex-col gap-1">
+                <div class="w-6 h-1 bg-black"></div>
+                <div class="w-6 h-1 bg-black"></div>
+                <div class="w-6 h-1 bg-black"></div>
+            </button>
         </div>
     </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-neo-yellow z-[55] flex-col justify-center items-center gap-8 hidden border-b-8 border-black">
+        <button id="mobile-menu-close"
+            class="absolute top-6 right-6 bg-white border-2 border-black w-12 h-12 shadow-hard text-2xl font-black hover:bg-neo-pink transition-colors">X</button>
+        <a href="#about"
+            class="mobile-link text-4xl font-black uppercase hover:text-white text-stroke-black transition-colors"
+            style="-webkit-text-stroke: 1px black;">/ABOUT</a>
+        <a href="#skills"
+            class="mobile-link text-4xl font-black uppercase hover:text-white text-stroke-black transition-colors"
+            style="-webkit-text-stroke: 1px black;">/SKILLS</a>
+        <a href="#experience"
+            class="mobile-link text-4xl font-black uppercase hover:text-white text-stroke-black transition-colors"
+            style="-webkit-text-stroke: 1px black;">/LOGS</a>
+        <a href="#projects"
+            class="mobile-link text-4xl font-black uppercase hover:text-white text-stroke-black transition-colors"
+            style="-webkit-text-stroke: 1px black;">/PROJECTS</a>
+        <a href="#contact"
+            class="mobile-link bg-neo-black text-white border-2 border-black px-8 py-3 text-3xl font-black uppercase shadow-hard mt-4">HIRE
+            ME</a>
+    </div>
 
     <section
         class="min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden border-b-4 border-black">
@@ -256,44 +297,40 @@
         <div
             class="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse">
         </div>
-        <div class="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none">CODE</div>
+        <div
+            class="absolute top-20 right-4 md:right-20 text-7xl md:text-9xl opacity-5 font-black select-none pointer-events-none">
+            CODE</div>
 
         <div class="relative z-10 text-center max-w-5xl">
             <div
                 class="inline-block bg-neo-white border-2 border-black px-4 py-1 mb-6 shadow-hard rotate-[-2deg] reveal">
                 <span class="font-mono font-bold text-neo-green bg-black px-2 mr-2">●</span>
-                <span class="font-mono font-bold">SYSTEM STATUS: ONLINE</span>
+                <span class="font-mono font-bold text-sm md:text-base">SYSTEM STATUS: ONLINE</span>
             </div>
 
             <h1
-                class="text-[13vw] md:text-[10vw] leading-[0.8] font-black uppercase tracking-tighter mb-6 reveal mix-blend-darken">
+                class="text-[15vw] md:text-[10vw] leading-[0.85] font-black uppercase tracking-tighter mb-6 reveal mix-blend-darken">
                 FULL STACK<br>
                 <span class="text-white text-stroke-black" style="-webkit-text-stroke: 3px black;">DEVELOPER</span>
             </h1>
 
             <p
-                class="font-mono text-lg md:text-2xl max-w-1xl mx-auto mb-10 bg-neo-yellow border-2 border-black p-6 shadow-hard reveal rotate-1">
-                I build digital products that refuse to be boring. <br>
-                <b>React • Python • Java • Node</b>
+                class="font-mono text-base md:text-2xl max-w-1xl mx-auto mb-10 bg-neo-yellow border-2 border-black p-4 md:p-6 shadow-hard reveal rotate-1">
+                I build digital products that refuse to be boring. <br class="hidden sm:block">
+                <b class="mt-2 block sm:inline">React • Python • Java • Node</b>
             </p>
 
-            <div class="flex flex-col md:flex-row justify-center gap-6 reveal">
+            <div class="flex flex-col md:flex-row justify-center gap-4 md:gap-6 reveal">
                 <a href="#projects"
-                    class="bg-black text-white border-2 border-black px-10 py-5 text-xl font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
+                    class="bg-black text-white border-2 border-black px-8 py-4 md:px-10 md:py-5 text-lg md:text-xl font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover w-full md:w-auto">
                     VIEW DATABASE
                 </a>
-                <!--
-                <a href="Assets/Resume/#" download
-                    class="bg-neo-white text-black border-2 border-black px-10 py-5 text-xl font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2">
-                    <i class="ri-download-line"></i> DOWNLOAD CV
-                </a>
-                -->
             </div>
         </div>
     </section>
 
     <div class="border-b-4 border-black bg-neo-blue py-3 relative z-20">
-        <div class="marquee-container font-mono font-bold text-2xl text-white">
+        <div class="marquee-container font-mono font-bold text-lg md:text-2xl text-white">
             <div class="marquee-content">
                 /// OPEN FOR WORK /// FULL STACK DEVELOPMENT /// UI/UX DESIGN /// WEB3 READY /// ACCESSIBLE /// FAST ///
                 SECURE /// OPEN FOR WORK /// FULL STACK DEVELOPMENT ///
@@ -301,10 +338,12 @@
         </div>
     </div>
 
-    <section id="about" class="py-24 px-4 max-w-7xl mx-auto border-x-4 border-black bg-white my-12 shadow-hard-lg">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+    <section id="about"
+        class="py-16 md:py-24 px-4 max-w-7xl mx-auto border-x-4 border-black bg-white my-8 md:my-12 shadow-hard-lg">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-12">
             <div class="md:col-span-4 reveal">
-                <div class="aspect-square bg-gray-200 border-4 border-black relative shadow-hard overflow-hidden group">
+                <div
+                    class="aspect-square bg-gray-200 border-4 border-black relative shadow-hard overflow-hidden group max-w-sm mx-auto md:max-w-none">
                     <img src="Assets/images/pfp.jpg" alt="Sathwik"
                         class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-500">
                     <span
@@ -312,22 +351,26 @@
                 </div>
             </div>
             <div class="md:col-span-8 flex flex-col justify-center reveal">
-                <h2 class="text-6xl font-black uppercase mb-6">Who am I?</h2>
-                <p class="font-mono text-xl leading-relaxed mb-6">
+                <h2 class="text-4xl md:text-6xl font-black uppercase mb-4 md:mb-6 text-center md:text-left">Who am I?
+                </h2>
+                <p class="font-mono text-base md:text-xl leading-relaxed mb-6">
                     I am Sathwik. A creative developer who believes the web has become too sanitized. I bring <span
-                        class="bg-neo-yellow px-1 border border-black">personality</span> back to code.
+                        class="bg-neo-yellow px-1 border border-black inline-block mt-1 sm:mt-0">personality</span> back
+                    to code.
                 </p>
-                <p class="font-mono text-lg mb-8 text-gray-600 border-l-4 border-neo-purple pl-4">
-                    > Full Stack Developer building AI-powered real-world solutions.<br>
-                    > Strong focus on MERN stack & AI/ML & system design.<br>
-                    > Turning ideas into scalable, production-ready solutions.
+                <p class="font-mono text-sm md:text-lg mb-8 text-gray-600 border-l-4 border-neo-purple pl-4 space-y-2">
+                    <span class="block">> Full Stack Developer building AI-powered real-world solutions.</span>
+                    <span class="block">> Strong focus on MERN stack & AI/ML & system design.</span>
+                    <span class="block">> Turning ideas into scalable, production-ready solutions.</span>
                 </p>
 
-                <div class="flex gap-4">
-                    <div class="bg-neo-black text-white px-4 py-2 font-mono text-sm border-2 border-transparent">
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <div
+                        class="bg-neo-black text-white px-4 py-3 sm:py-2 font-mono text-sm border-2 border-transparent text-center">
                         📍 LOCATION: WORLDWIDE
                     </div>
-                    <div class="bg-neo-green text-black px-4 py-2 font-mono text-sm border-2 border-black">
+                    <div
+                        class="bg-neo-green text-black px-4 py-3 sm:py-2 font-mono text-sm border-2 border-black text-center font-bold">
                         🟢 STATUS: AVAILABLE
                     </div>
                 </div>
@@ -335,238 +378,235 @@
         </div>
     </section>
 
-    <section id="skills" class="py-20 bg-neo-black text-neo-white border-y-4 border-black relative overflow-hidden">
+    <section id="skills"
+        class="py-16 md:py-20 bg-neo-black text-neo-white border-y-4 border-black relative overflow-hidden">
         <div class="absolute inset-0 opacity-20"
             style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;">
         </div>
 
         <div class="max-w-[1400px] mx-auto px-4 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b-4 border-white pb-4">
-                <h2 class="text-6xl md:text-8xl font-black uppercase text-white tracking-tighter">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-12 border-b-4 border-white pb-4 gap-4 sm:gap-0">
+                <h2 class="text-5xl md:text-8xl font-black uppercase text-white tracking-tighter leading-none">
                     TECH<span class="text-neo-green">_STACK</span>
                 </h2>
-                <div class="flex items-center gap-2 mb-2 md:mb-4">
+                <div class="flex items-center gap-2 mb-1 sm:mb-2 md:mb-4">
                     <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                    <p class="font-mono text-neo-green text-sm font-bold">/// SYSTEM_OPTIMIZED</p>
+                    <p class="font-mono text-neo-green text-xs md:text-sm font-bold">/// SYSTEM_OPTIMIZED</p>
                 </div>
             </div>
 
             <div class="flex flex-wrap justify-center md:justify-start">
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LIBRARY
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">REACT</div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ LIBRARY</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        REACT</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NEXT.JS
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ FRAMEWORK</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        NEXT.JS</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Python
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        Python</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ BACKEND
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NODE.JS
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ BACKEND</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        NODE.JS</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ STYLING
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">TAILWIND
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ STYLING</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        TAILWIND</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ DATA</div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">MONGODB
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ DATA</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        MONGODB</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ CORE</div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">HTML5</div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ CORE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        HTML5</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ VERSION
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GIT</div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ VERSION</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        GIT</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ QUERY</div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">SQL
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ QUERY</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        SQL</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">TYPESCRIPT
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        TYPESCRIPT</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">JAVA</div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        JAVA</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Express
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ FRAMEWORK</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        Express</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">PHP</div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        PHP</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">R
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        R</div>
                 </div>
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OPS</div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GitHub
-                    </div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ OPS</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        GitHub</div>
                 </div>
-
-
-
                 <div
                     class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
-                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
-                    </div>
-                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">C++</div>
+                    <div class="text-neo-green group-hover:text-black font-mono text-[10px] md:text-xs mb-1 opacity-50">
+                        >_ LANGUAGE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-lg md:text-xl uppercase">
+                        C++</div>
                 </div>
             </div>
 
-            <div class="border-t-4 border-white mt-8 pt-4 flex justify-between font-mono text-xs text-gray-500">
+            <div
+                class="border-t-4 border-white mt-8 pt-4 flex flex-col sm:flex-row justify-between font-mono text-xs text-gray-500 gap-2">
                 <span>TOTAL_NODES: 16</span>
                 <span>MEMORY_USAGE: 128MB</span>
             </div>
         </div>
 
-        <div class="max-w-[1400px] mx-auto px-4 relative z-10">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b-4 border-white/50 pb-4">
-                <h2 class="text-5xl md:text-7xl font-black uppercase text-white tracking-tighter">
+        <div class="max-w-[1400px] mx-auto px-4 relative z-10 mt-16 md:mt-24">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-8 md:mb-12 border-b-4 border-white/50 pb-4 gap-4 sm:gap-0">
+                <h2 class="text-4xl md:text-7xl font-black uppercase text-white tracking-tighter leading-none">
                     DEV<span class="text-orange-500">_TOOLS</span>
                 </h2>
-                <div class="flex items-center gap-2 mb-2 md:mb-4">
+                <div class="flex items-center gap-2 mb-1 sm:mb-2 md:mb-4">
                     <div class="w-3 h-3 bg-yellow-500 rounded-full animate-pulse"></div>
-                    <p class="font-mono text-orange-500 text-sm font-bold">/// ACTIVE_WORKSPACE</p>
+                    <p class="font-mono text-orange-500 text-xs md:text-sm font-bold">/// ACTIVE_WORKSPACE</p>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-8 pb-8 pr-2">
-
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6 lg:gap-8 pb-8 pr-2">
                 <div
-                    class="group h-32 border-4 border-white bg-blue-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-4 shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[6px] hover:translate-x-[6px]">
-                    <div class="text-black group-hover:text-blue-400 font-mono text-xs mb-1 font-bold">_ EDITOR</div>
+                    class="group h-24 md:h-32 border-4 border-white bg-blue-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[4px] hover:translate-x-[4px] md:hover:translate-y-[6px] md:hover:translate-x-[6px]">
+                    <div class="text-black group-hover:text-blue-400 font-mono text-[10px] md:text-xs mb-1 font-bold">_
+                        EDITOR</div>
                     <div
-                        class="text-black group-hover:text-white font-black font-display text-2xl md:text-xl xl:text-2xl uppercase tracking-tight">
+                        class="text-black group-hover:text-white font-black font-display text-xl md:text-2xl uppercase tracking-tight">
                         VS Code</div>
                 </div>
-
                 <div
-                    class="group h-32 border-4 border-white bg-orange-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-4 shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[6px] hover:translate-x-[6px]">
-                    <div class="text-black group-hover:text-orange-400 font-mono text-xs mb-1 font-bold">_ API</div>
+                    class="group h-24 md:h-32 border-4 border-white bg-orange-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[4px] hover:translate-x-[4px] md:hover:translate-y-[6px] md:hover:translate-x-[6px]">
+                    <div class="text-black group-hover:text-orange-400 font-mono text-[10px] md:text-xs mb-1 font-bold">
+                        _ API</div>
                     <div
-                        class="text-black group-hover:text-white font-black font-display text-2xl md:text-xl xl:text-2xl uppercase tracking-tight">
+                        class="text-black group-hover:text-white font-black font-display text-xl md:text-2xl uppercase tracking-tight">
                         Postman</div>
                 </div>
-
                 <div
-                    class="group h-32 border-4 border-white bg-pink-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-4 shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[6px] hover:translate-x-[6px]">
-                    <div class="text-black group-hover:text-pink-400 font-mono text-xs mb-1 font-bold">_ DESIGN</div>
+                    class="group h-24 md:h-32 border-4 border-white bg-pink-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[4px] hover:translate-x-[4px] md:hover:translate-y-[6px] md:hover:translate-x-[6px]">
+                    <div class="text-black group-hover:text-pink-400 font-mono text-[10px] md:text-xs mb-1 font-bold">_
+                        DESIGN</div>
                     <div
-                        class="text-black group-hover:text-white font-black font-display text-2xl md:text-xl xl:text-2xl uppercase tracking-tight">
+                        class="text-black group-hover:text-white font-black font-display text-xl md:text-2xl uppercase tracking-tight">
                         Framer</div>
                 </div>
-
                 <div
-                    class="group h-32 border-4 border-white bg-emerald-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-4 shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[6px] hover:translate-x-[6px]">
-                    <div class="text-black group-hover:text-emerald-400 font-mono text-xs mb-1 font-bold">_ DEPLOY</div>
+                    class="group h-24 md:h-32 border-4 border-white bg-emerald-500 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[4px] hover:translate-x-[4px] md:hover:translate-y-[6px] md:hover:translate-x-[6px]">
                     <div
-                        class="text-black group-hover:text-white font-black font-display text-2xl md:text-xl xl:text-2xl uppercase tracking-tight">
+                        class="text-black group-hover:text-emerald-400 font-mono text-[10px] md:text-xs mb-1 font-bold">
+                        _ DEPLOY</div>
+                    <div
+                        class="text-black group-hover:text-white font-black font-display text-xl md:text-2xl uppercase tracking-tight">
                         GitHub</div>
                 </div>
-
                 <div
-                    class="group h-32 border-4 border-white bg-yellow-400 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-4 shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[6px] hover:translate-x-[6px]">
-                    <div class="text-black group-hover:text-yellow-400 font-mono text-xs mb-1 font-bold">_ HOSTING</div>
+                    class="group h-24 md:h-32 border-4 border-white bg-yellow-400 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[4px] hover:translate-x-[4px] md:hover:translate-y-[6px] md:hover:translate-x-[6px]">
+                    <div class="text-black group-hover:text-yellow-400 font-mono text-[10px] md:text-xs mb-1 font-bold">
+                        _ HOSTING</div>
                     <div
-                        class="text-black group-hover:text-white font-black font-display text-2xl md:text-xl xl:text-2xl uppercase tracking-tight">
+                        class="text-black group-hover:text-white font-black font-display text-xl md:text-2xl uppercase tracking-tight">
                         Vercel</div>
                 </div>
-
                 <div
-                    class="group h-32 border-4 border-white bg-green-400 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-4 shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[6px] hover:translate-x-[6px]">
-                    <div class="text-black group-hover:text-green-400 font-mono text-xs mb-1 font-bold">_ CLI</div>
+                    class="group h-24 md:h-32 border-4 border-white bg-green-400 hover:bg-black transition-all duration-0 cursor-pointer flex flex-col items-start justify-center p-3 md:p-4 shadow-[4px_4px_0px_0px_rgba(255,255,255,1)] md:shadow-[6px_6px_0px_0px_rgba(255,255,255,1)] hover:shadow-[0px_0px_0px_0px_rgba(255,255,255,1)] hover:translate-y-[4px] hover:translate-x-[4px] md:hover:translate-y-[6px] md:hover:translate-x-[6px]">
+                    <div class="text-black group-hover:text-green-400 font-mono text-[10px] md:text-xs mb-1 font-bold">_
+                        CLI</div>
                     <div
-                        class="text-black group-hover:text-white font-black font-display text-2xl md:text-xl xl:text-2xl uppercase tracking-tight">
+                        class="text-black group-hover:text-white font-black font-display text-xl md:text-2xl uppercase tracking-tight">
                         Terminal</div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="experience" class="py-24 px-4 max-w-7xl mx-auto">
-        <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter text-center">
-            Achievement<span class="text-neo-red">_Log</span>
+    <section id="experience" class="py-16 md:py-24 px-4 max-w-7xl mx-auto">
+        <h2 class="text-4xl md:text-8xl font-black uppercase mb-12 tracking-tighter text-center">
+            Achievement<span class="text-neo-red block md:inline">_Log</span>
         </h2>
 
-        <div class="relative border-l-4 border-black ml-4 md:ml-10 space-y-12">
-            <div class="reveal relative pl-8 md:pl-16 mt-10">
-                <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-red border-4 border-black"></div>=
-                <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
+        <div class="relative border-l-4 border-black ml-2 md:ml-10 space-y-12">
+            <div class="reveal relative pl-6 md:pl-16 mt-10">
+                <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-red border-4 border-black"></div>
+                <div class="bg-white border-4 border-black p-4 md:p-6 shadow-hard hover:shadow-hard-xl transition-all">
                     <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
-                        <h3 class="text-3xl font-black uppercase">
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4 gap-2">
+                        <h3 class="text-2xl md:text-3xl font-black uppercase leading-tight">
                             Ideathon – Runner Up
                         </h3>
-                        <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">
+                        <span
+                            class="font-mono font-bold bg-neo-black text-white px-2 py-1 text-sm md:text-base whitespace-nowrap">
                             JAN 2026
                         </span>
                     </div>
-                    <p class="font-mono text-xl mb-2 text-neo-red font-bold">
+                    <p class="font-mono text-lg md:text-xl mb-3 text-neo-red font-bold">
                         GOV-P29: Citizen Feedback & Grievance Tracker
                     </p>
-                    <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
+                    <ul class="list-disc list-inside font-mono text-sm md:text-base text-gray-700 space-y-2">
                         <li>Secured Runner-Up by building a citizen-first grievance tracking platform.</li>
                         <li>Designed real-time notifications, SLA timers, and transparency dashboards.</li>
                         <li>Developed role-based modules: Citizen App, Officer Dashboard, Public Portal.</li>
@@ -576,23 +616,23 @@
                 </div>
             </div>
 
-
-            <div class="reveal relative pl-8 md:pl-16 mt-10">
+            <div class="reveal relative pl-6 md:pl-16 mt-10">
                 <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-blue border-4 border-black"></div>
-                <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
+                <div class="bg-white border-4 border-black p-4 md:p-6 shadow-hard hover:shadow-hard-xl transition-all">
                     <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
-                        <h3 class="text-3xl font-black uppercase">
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4 gap-2">
+                        <h3 class="text-2xl md:text-3xl font-black uppercase leading-tight">
                             Hackathon – AgriTech Innovation
                         </h3>
-                        <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">
+                        <span
+                            class="font-mono font-bold bg-neo-black text-white px-2 py-1 text-sm md:text-base whitespace-nowrap">
                             JAN 2026
                         </span>
                     </div>
-                    <p class="font-mono text-xl mb-2 text-neo-blue font-bold">
-                        AI-Powered Real-Time Market Intelligence for Farmers
+                    <p class="font-mono text-lg md:text-xl mb-3 text-neo-blue font-bold">
+                        AI-Powered Real-Time Market Intelligence
                     </p>
-                    <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
+                    <ul class="list-disc list-inside font-mono text-sm md:text-base text-gray-700 space-y-2">
                         <li>Designed an AI-enabled two-sided digital marketplace connecting farmers directly with
                             buyers.</li>
                         <li>Developed a real-time market intelligence layer to predict fair prices using demand-supply
@@ -607,22 +647,23 @@
                 </div>
             </div>
 
-            <div class="reveal relative pl-8 md:pl-16 mt-10">
+            <div class="reveal relative pl-6 md:pl-16 mt-10">
                 <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-purple border-4 border-black"></div>
-                <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
+                <div class="bg-white border-4 border-black p-4 md:p-6 shadow-hard hover:shadow-hard-xl transition-all">
                     <div
-                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
-                        <h3 class="text-3xl font-black uppercase">
-                            UI/UX Design Internship – Sierra Learning Academy
+                        class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4 gap-2">
+                        <h3 class="text-2xl md:text-3xl font-black uppercase leading-tight">
+                            UI/UX Design Internship
                         </h3>
-                        <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">
+                        <span
+                            class="font-mono font-bold bg-neo-black text-white px-2 py-1 text-sm md:text-base whitespace-nowrap">
                             FEB 2025 – MAY 2025
                         </span>
                     </div>
-                    <p class="font-mono text-xl mb-2 text-neo-purple font-bold">
-                        Framer-Based Website Design & Visual Communication
+                    <p class="font-mono text-lg md:text-xl mb-3 text-neo-purple font-bold">
+                        Sierra Learning Academy
                     </p>
-                    <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
+                    <ul class="list-disc list-inside font-mono text-sm md:text-base text-gray-700 space-y-2">
                         <li>Completed a 4-month internship program focused on UI/UX design principles and user-centered
                             design workflows.</li>
                         <li>Designed responsive websites using the Framer tool, emphasizing layout systems and
@@ -636,32 +677,28 @@
                     </ul>
                 </div>
             </div>
-
-
-
         </div>
     </section>
-    <!-- CODING STATS SECTION -->
-    <section id="coding-stats" class="py-12 bg-neo-black text-white border-y-4 border-black relative overflow-hidden">
+
+    <section id="coding-stats"
+        class="py-12 md:py-16 bg-neo-black text-white border-y-4 border-black relative overflow-hidden">
         <div class="absolute inset-0 opacity-20"
             style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;">
         </div>
 
         <div class="max-w-7xl mx-auto px-4 relative z-10">
-            <!-- Compact Header -->
-            <div class="flex justify-between items-center mb-6 border-b-2 border-white pb-3">
-                <h2 class="text-4xl md:text-5xl font-black uppercase text-white tracking-tight">
+            <div
+                class="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 border-b-2 border-white pb-4 gap-2">
+                <h2 class="text-3xl md:text-5xl font-black uppercase text-white tracking-tight leading-none">
                     CODING<span class="text-neo-green">_STATS</span>
                 </h2>
-                <div class="flex items-center gap-2">
+                <div class="flex items-center gap-2 mt-2 sm:mt-0">
                     <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
                     <p class="font-mono text-neo-green text-xs font-bold">LIVE</p>
                 </div>
             </div>
 
-            <!-- Two Column Layout: GitHub | LeetCode -->
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:auto-rows-fr">
-                <!-- GitHub Column -->
                 <div class="reveal flex flex-col h-full">
                     <div class="flex items-center gap-2 mb-4 border-b border-white/20 pb-2">
                         <div class="w-8 h-8 bg-neo-green border-2 border-white flex items-center justify-center">
@@ -670,94 +707,85 @@
                         <h3 class="text-2xl font-black uppercase text-white">GITHUB</h3>
                     </div>
 
-                    <!-- GitHub Block -->
                     <div
-                        class="border-4 border-white/20 p-6 bg-black flex-1 flex flex-col shadow-[8px_8px_0_rgba(0,0,0,1)] relative group">
-                        <!-- Profile Header -->
-                        <div class="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
+                        class="border-4 border-white/20 p-4 md:p-6 bg-black flex-1 flex flex-col shadow-[6px_6px_0_rgba(0,0,0,1)] relative group">
+                        <div
+                            class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 pb-4 border-b border-white/10 gap-4">
                             <div class="flex items-center gap-3">
-                                <i class="ri-github-fill text-3xl text-neo-green"></i>
+                                <i class="ri-github-fill text-3xl md:text-4xl text-neo-green"></i>
                                 <div>
-                                    <h4 class="text-xl font-black text-white leading-tight">Sathwik656</h4>
-                                    <p class="text-[10px] font-mono text-neo-green uppercase tracking-widest">Midnight
-                                        Coder</p>
+                                    <h4 class="text-lg md:text-xl font-black text-white leading-tight">Sathwik656</h4>
+                                    <p
+                                        class="text-[9px] md:text-[10px] font-mono text-neo-green uppercase tracking-widest">
+                                        Midnight Coder</p>
                                 </div>
                             </div>
-                            <div class="text-right">
+                            <div class="text-left sm:text-right">
                                 <div id="total-contributions"
-                                    class="text-2xl font-black text-neo-green tracking-tighter">--</div>
-                                <p class="text-[8px] font-mono text-gray-500 uppercase">Commits</p>
+                                    class="text-2xl md:text-3xl font-black text-neo-green tracking-tighter">--</div>
+                                <p class="text-[8px] md:text-[9px] font-mono text-gray-500 uppercase">Commits</p>
                             </div>
                         </div>
 
-                        <!-- Simplified Stats Grid (2x2) -->
-                        <div class="grid grid-cols-2 gap-4 mb-8 uppercase">
+                        <div class="grid grid-cols-2 gap-3 md:gap-4 mb-6 uppercase">
                             <div
-                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-3 md:p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
                                 <div
-                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    class="text-[8px] md:text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
                                     Repositories</div>
-                                <div id="repos-count" class="text-white font-black text-3xl tracking-tighter">--</div>
+                                <div id="repos-count"
+                                    class="text-white font-black text-2xl md:text-3xl tracking-tighter">--</div>
                             </div>
                             <div
-                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-3 md:p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
                                 <div
-                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    class="text-[8px] md:text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
                                     Followers</div>
-                                <div id="followers-count" class="text-white font-black text-3xl tracking-tighter">--
-                                </div>
+                                <div id="followers-count"
+                                    class="text-white font-black text-2xl md:text-3xl tracking-tighter">--</div>
                             </div>
                             <div
-                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-3 md:p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
                                 <div
-                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    class="text-[8px] md:text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
                                     Commits</div>
                                 <div id="total-contributions-grid"
-                                    class="text-white font-black text-3xl tracking-tighter">--</div>
+                                    class="text-white font-black text-2xl md:text-3xl tracking-tighter">--</div>
                             </div>
                             <div
-                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-3 md:p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
                                 <div
-                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    class="text-[8px] md:text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
                                     Joined</div>
                                 <div id="created-at"
-                                    class="text-white font-black text-xl tracking-tighter mt-1 leading-none">--</div>
+                                    class="text-white font-black text-lg md:text-xl tracking-tighter mt-1 md:mt-2 leading-none">
+                                    --</div>
                             </div>
                         </div>
 
-                        <!-- Activity Graph parallel to LeetCode Heatmap -->
-                        <div class="flex-1 flex flex-col justify-center mb-8">
+                        <div class="flex-1 flex flex-col justify-center mb-6">
                             <div
                                 class="bg-black border-2 border-neo-green/30 p-2 overflow-hidden shadow-[4px_4px_0_rgba(51,255,87,0.1)] group hover:border-neo-green transition-colors duration-500 relative">
-
-                                <!-- NeoBrutalist accent dot -->
                                 <div class="absolute top-1 right-1 w-1.5 h-1.5 bg-neo-green rounded-full animate-pulse">
                                 </div>
-
-                                <!-- Label -->
                                 <p class="text-[8px] font-mono text-neo-green/50 uppercase tracking-[0.2em] mb-1">
-                                    Matrix_Output
-                                </p>
-
-                                <!-- GitHub Activity Graph -->
+                                    Matrix_Output</p>
                                 <img src="https://github-readme-activity-graph.vercel.app/graph?username=Sathwik656&bg_color=000000&color=33FF57&line=33FF57&point=ffffff&area=true&hide_border=true"
                                     alt="GitHub Activity Graph"
-                                    class="w-full h-auto filter brightness-110 contrast-110 transition-transform duration-500 group-hover:scale-[1.02]"
+                                    class="w-full h-auto filter brightness-110 contrast-110 transition-transform duration-500 group-hover:scale-[1.02] object-contain"
                                     style="image-rendering: auto;" />
                             </div>
                         </div>
 
-
-                        <!-- Command Line Footer -->
                         <div
-                            class="mt-auto flex items-center justify-between text-neo-green p-3 border-2 border-white/10 bg-neo-black font-mono text-[11px]">
+                            class="mt-auto flex flex-col sm:flex-row items-start sm:items-center justify-between text-neo-green p-3 border-2 border-white/10 bg-neo-black font-mono text-[10px] md:text-[11px] gap-3 sm:gap-0">
                             <div class="flex items-center gap-2">
                                 <span class="text-white/30">$</span>
                                 <span class="text-neo-green">gh --stats</span>
                                 <span class="animate-pulse">_</span>
                             </div>
                             <a href="https://github.com/Sathwik656" target="_blank"
-                                class="text-neo-green px-3 py-1 font-black uppercase border border-neo-green hover:bg-neo-green hover:text-black transition-all">
+                                class="w-full sm:w-auto text-center text-neo-green px-3 py-2 sm:py-1 font-black uppercase border border-neo-green hover:bg-neo-green hover:text-black transition-all">
                                 VIEW_GH →
                             </a>
                         </div>
@@ -773,18 +801,18 @@
                     </div>
 
                     <div
-                        class="border-4 border-white/20 p-6 bg-black flex-1 flex flex-col shadow-[8px_8px_0_rgba(0,0,0,1)] relative">
-
+                        class="border-4 border-white/20 p-4 md:p-6 bg-black flex-1 flex flex-col shadow-[6px_6px_0_rgba(0,0,0,1)] relative">
                         <div class="flex items-center justify-between mb-4">
                             <p
-                                class="text-[10px] font-mono text-neo-green uppercase tracking-widest flex items-center gap-2">
+                                class="text-[9px] md:text-[10px] font-mono text-neo-green uppercase tracking-widest flex items-center gap-2">
                                 <span class="w-2 h-2 bg-neo-green animate-pulse"></span>
                                 Recent_Deployments
                             </p>
-                            <span class="text-[9px] text-gray-500 font-mono">FETCHING_DATA...</span>
+                            <span
+                                class="text-[8px] md:text-[9px] text-gray-500 font-mono hidden sm:block">FETCHING_DATA...</span>
                         </div>
 
-                        <div id="gh-projects-list" class="flex flex-col gap-3 mb-8">
+                        <div id="gh-projects-list" class="flex flex-col gap-3 mb-6">
                             <div class="p-4 border border-white/10 bg-white/5 animate-pulse">
                                 <div class="h-4 bg-white/10 w-2/3 mb-2"></div>
                                 <div class="h-2 bg-white/10 w-full mb-1"></div>
@@ -794,365 +822,308 @@
 
                         <div class="mt-auto">
                             <div class="flex items-center justify-between mb-4 border-t border-white/10 pt-4">
-                                <p class="text-[10px] font-mono text-neo-green uppercase tracking-widest">
+                                <p class="text-[9px] md:text-[10px] font-mono text-neo-green uppercase tracking-widest">
                                     Detected_Stack
                                 </p>
-                                <span class="text-[9px] text-gray-500 font-mono">CPU_USAGE_OPTIMIZED</span>
+                                <span
+                                    class="text-[8px] md:text-[9px] text-gray-500 font-mono hidden sm:block">CPU_USAGE_OPTIMIZED</span>
                             </div>
-
-                            <div id="gh-languages-list" class="space-y-3 font-mono text-xs">
-                            </div>
+                            <div id="gh-languages-list" class="space-y-3 font-mono text-xs"></div>
                         </div>
 
                         <div
-                            class="mt-6 flex items-center gap-2 text-gray-500 p-2 bg-black border border-white/5 font-mono text-[10px]">
+                            class="mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-2 text-gray-500 p-3 bg-black border border-white/5 font-mono text-[9px] md:text-[10px]">
                             <span class="text-neo-green">root@server:~#</span>
-                            <span>./fetch_latest_repos.sh</span>
+                            <span class="break-all">./fetch_latest_repos.sh</span>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 bg-neo-yellow border-t-4 border-black px-4 overflow-hidden">
+    <section id="projects" class="py-16 md:py-24 bg-neo-yellow border-t-4 border-black px-4 overflow-hidden">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-6xl md:text-9xl font-black mb-16 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)] text-stroke-black"
+            <h2 class="text-5xl md:text-7xl lg:text-9xl font-black mb-12 md:mb-16 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)] text-stroke-black break-words"
                 style="-webkit-text-stroke: 3px black;">
                 PROJECTS
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+                <article class="reveal group bg-white border-4 border-black p-4 md:p-5 shadow-hard">
                     <div
                         class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
                         <img src="Assets/images/ai.png"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <div class="flex justify-between items-start">
-                        <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+                        <div class="w-full">
                             <a href="https://mern-ai-assistant-frontend.onrender.com/login" target="_blank">
                                 <h3
-                                    class="text-4xl font-black uppercase mb-2 group-hover:text-neo-purple transition-colors glitch-hover">
+                                    class="text-3xl md:text-4xl font-black uppercase mb-3 group-hover:text-neo-purple transition-colors glitch-hover">
                                     Ai Learning Assistant</h3>
                             </a>
-                            <p class="font-mono text-sm mb-4 max-w-xs">An AI-powered document learning platform enabling
+                            <p class="font-mono text-sm mb-4 max-w-sm">An AI-powered document learning platform enabling
                                 uploads, smart summaries, quizzes, and interactive chatbot support.</p>
-                            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
-                                <span class="bg-neo-black text-white px-2 py-1">React</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Next.js</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Expres.js</span>
-                                <span class="bg-neo-black text-white px-2 py-1">MongoDB</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Gemini API</span>
+                            <div class="flex gap-2 font-mono text-[10px] md:text-xs font-bold flex-wrap">
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">React</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Next.js</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Expres.js</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">MongoDB</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Gemini API</span>
                             </div>
                         </div>
                         <a href="https://mern-ai-assistant-frontend.onrender.com/login" target="_blank"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm self-start shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
 
-                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard mt-0 md:mt-20">
+                <article class="reveal group bg-white border-4 border-black p-4 md:p-5 shadow-hard md:mt-20">
                     <div
                         class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
                         <img src="Assets//images/cancer.png"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <div class="flex justify-between items-start">
-                        <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+                        <div class="w-full">
                             <a href="https://app-cancer-predict-xavy.streamlit.app/" target="_blank">
                                 <h3
-                                    class="text-4xl font-black uppercase mb-2 group-hover:text-neo-blue transition-colors glitch-hover">
+                                    class="text-3xl md:text-4xl font-black uppercase mb-3 group-hover:text-neo-blue transition-colors glitch-hover">
                                     Cancer Predictor</h3>
                             </a>
-                            <p class="font-mono text-sm mb-4 max-w-xs">A Streamlit web application using scikit-learn
+                            <p class="font-mono text-sm mb-4 max-w-sm">A Streamlit web application using scikit-learn
                                 models to predict cancer risk from clinical data.</p>
-                            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
-                                <span class="bg-neo-black text-white px-2 py-1">Streamlit</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Scikit-learn</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Pandas</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Numpy</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Matplotlib</span>
+                            <div class="flex gap-2 font-mono text-[10px] md:text-xs font-bold flex-wrap">
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Streamlit</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Scikit-learn</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Pandas</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Numpy</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Matplotlib</span>
                             </div>
                         </div>
                         <a href="https://app-cancer-predict-xavy.streamlit.app/" target="_blank"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm self-start shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
 
-                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
+                <article class="reveal group bg-white border-4 border-black p-4 md:p-5 shadow-hard">
                     <div
                         class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
-                        <img src="Assets/images/sub.png"
-                            alt="Subscription Tracker - Full Stack Expense & Subscription Management App by Sathwik"
+                        <img src="Assets/images/sub.png" alt="Subscription Tracker"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <div class="flex justify-between items-start">
-                        <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+                        <div class="w-full">
                             <a href="https://sub-tracker-xavy.netlify.app/" target="_blank">
                                 <h3
-                                    class="text-4xl font-black uppercase mb-2 group-hover:text-neo-pink transition-colors glitch-hover">
+                                    class="text-3xl md:text-4xl font-black uppercase mb-3 group-hover:text-neo-pink transition-colors glitch-hover">
                                     Subscription Tracker</h3>
                             </a>
-                            <p class="font-mono text-sm mb-4 max-w-xs">
+                            <p class="font-mono text-sm mb-4 max-w-sm">
                                 Full Stack web application to track, manage and analyze recurring subscriptions with
                                 real-time cost insights and structured expense monitoring.
                             </p>
-
-                            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
-                                <span class="bg-neo-black text-white px-2 py-1">React</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Next.js</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Express</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Firebase</span>
-                                <span class="bg-neo-black text-white px-2 py-1">JWT Auth</span>
+                            <div class="flex gap-2 font-mono text-[10px] md:text-xs font-bold flex-wrap">
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">React</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Next.js</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Express</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Firebase</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">JWT Auth</span>
                             </div>
                         </div>
-
                         <a href="https://sub-tracker-xavy.netlify.app/" target="_blank"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm self-start shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
 
-
-                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard mt-0 md:mt-20">
+                <article class="reveal group bg-white border-4 border-black p-4 md:p-5 shadow-hard md:mt-20">
                     <div
                         class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
                         <img src="Assets/images/civ.png"
                             class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
                     </div>
-                    <div class="flex justify-between items-start">
-                        <div>
+                    <div class="flex flex-col sm:flex-row justify-between items-start gap-4">
+                        <div class="w-full">
                             <a href="https://sathwik656.github.io/Civic-Eye-Website/" target="_blank">
                                 <h3
-                                    class="text-4xl font-black uppercase mb-2 group-hover:text-neo-orange transition-colors glitch-hover">
+                                    class="text-3xl md:text-4xl font-black uppercase mb-3 group-hover:text-neo-orange transition-colors glitch-hover">
                                     Civic Eye</h3>
                             </a>
-                            <p class="font-mono text-sm mb-4 max-w-xs">Ai powered traffic voilation system using YOLOv5
-                                and OpenCV.
-                                Detects traffic violations in real-time and sends alerts to the authorities.
-                            </p>
-                            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
-                                <span class="bg-neo-black text-white px-2 py-1">YOLOv5</span>
-                                <span class="bg-neo-black text-white px-2 py-1">OpenCV</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Python</span>
-                                <span class="bg-neo-black text-white px-2 py-1">Flask</span>
-                                <span class="bg-neo-black text-white px-2 py-1">PHP</span>
-                                <span class="bg-neo-black text-white px-2 py-1">MySQL</span>
+                            <p class="font-mono text-sm mb-4 max-w-sm">Ai powered traffic voilation system using YOLOv5
+                                and OpenCV. Detects traffic violations in real-time and sends alerts.</p>
+                            <div class="flex gap-2 font-mono text-[10px] md:text-xs font-bold flex-wrap">
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">YOLOv5</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">OpenCV</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Python</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">Flask</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">PHP</span>
+                                <span class="bg-neo-black text-white px-2 py-1 mb-1">MySQL</span>
                             </div>
                         </div>
                         <a href="https://sathwik656.github.io/Civic-Eye-Website/" target="_blank"
-                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm self-start shrink-0">
                             <i class="ri-arrow-right-up-line text-2xl"></i>
                         </a>
                     </div>
                 </article>
             </div>
 
-            <div class="text-center mt-24">
+            <div class="text-center mt-16 md:mt-24">
                 <a href="https://github.com/Sathwik656?tab=repositories"
-                    class="inline-block bg-neo-black text-white px-12 py-5 font-bold font-mono text-xl hover:bg-neo-white hover:text-black border-4 border-black transition-all shadow-hard hover:shadow-none cursor-hover">
+                    class="inline-block bg-neo-black text-white px-8 py-4 md:px-12 md:py-5 font-bold font-mono text-lg md:text-xl hover:bg-neo-white hover:text-black border-4 border-black transition-all shadow-hard hover:shadow-none cursor-hover w-full sm:w-auto">
                     VIEW ALL REPOS ON GITHUB
                 </a>
             </div>
         </div>
     </section>
 
-    <section id="certifications" class="py-24 bg-neo-black border-t-4 border-black overflow-hidden relative">
+    <section id="certifications" class="py-16 md:py-24 bg-neo-black border-t-4 border-black overflow-hidden relative">
         <div class="max-w-7xl mx-auto px-4">
             <div
-                class="flex items-center gap-2 mb-16 bg-white/5 border-2 border-white/10 p-4 inline-flex shadow-hard shadow-neo-blue/20">
-                <div class="flex gap-2">
-                    <div class="h-3 w-3 bg-red-500 rounded-full border border-black"></div>
-                    <div class="h-3 w-3 bg-yellow-500 rounded-full border border-black"></div>
-                    <div class="h-3 w-3 bg-green-500 rounded-full border border-black"></div>
+                class="flex items-center gap-2 mb-10 md:mb-16 bg-white/5 border-2 border-white/10 p-4 inline-flex shadow-hard shadow-neo-blue/20 max-w-full overflow-x-hidden">
+                <div class="flex gap-1.5 md:gap-2">
+                    <div class="h-2.5 w-2.5 md:h-3 md:w-3 bg-red-500 rounded-full border border-black shrink-0"></div>
+                    <div class="h-2.5 w-2.5 md:h-3 md:w-3 bg-yellow-500 rounded-full border border-black shrink-0">
+                    </div>
+                    <div class="h-2.5 w-2.5 md:h-3 md:w-3 bg-green-500 rounded-full border border-black shrink-0"></div>
                 </div>
-                <h2 class="font-mono text-white text-xl font-bold ml-4 tracking-tighter">CERTIFICATIONS.txt</h2>
-                <div class="ml-8 px-2 bg-neo-green text-black text-[10px] font-black uppercase">VERIFIED</div>
+                <h2 class="font-mono text-white text-base md:text-xl font-bold ml-2 md:ml-4 tracking-tighter truncate">
+                    CERTIFICATIONS.txt</h2>
+                <div
+                    class="ml-4 md:ml-8 px-2 bg-neo-green text-black text-[9px] md:text-[10px] font-black uppercase hidden sm:block">
+                    VERIFIED</div>
             </div>
         </div>
 
         <div class="marquee-container group cursor-hover">
-            <div class="marquee-content flex gap-8 py-12 px-4 select-none">
-
-                <!-- Certification Card 1 -->
-                <a href="Assets/certificates/Full_stack_developer.pdf" target="_blank" class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
-                hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 
-                relative overflow-hidden text-left whitespace-normal">
-
+            <div class="marquee-content flex gap-6 md:gap-8 py-6 md:py-12 px-4 select-none">
+                <a href="Assets/certificates/Full_stack_developer.pdf" target="_blank"
+                    class="flex-shrink-0 w-[320px] md:w-[450px] bg-neo-black border-4 border-white/10 p-6 md:p-8 shadow-hard hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-green"></div>
                     <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
-
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">
-                            CERT_001.pdf
+                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">CERT_001.pdf
                         </div>
                         <div class="text-[10px] font-mono text-gray-500">2025</div>
                     </div>
-
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
-                        ISSUED BY: Udemy
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">ISSUED BY: Udemy
                     </div>
-
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">
-                        Full Stack Web Development Certification
-                    </p>
-
-                    <div class="font-mono text-neo-green text-xs uppercase tracking-widest">
-                        Click to View Certificate →
-                    </div>
+                    <p class="font-bold text-lg md:text-xl leading-snug mb-6 text-white/90">Full Stack Web Development
+                        Certification</p>
+                    <div class="font-mono text-neo-green text-[10px] md:text-xs uppercase tracking-widest">Click to View
+                        Certificate →</div>
                 </a>
 
-
-                <!-- Certification Card 2 -->
-                <a href="Assets/certificates/Cloud_application_developer.pdf" target="_blank" class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
-                hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 
-                relative overflow-hidden text-left whitespace-normal">
-
+                <a href="Assets/certificates/Cloud_application_developer.pdf" target="_blank"
+                    class="flex-shrink-0 w-[320px] md:w-[450px] bg-neo-black border-4 border-white/10 p-6 md:p-8 shadow-hard hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
                     <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
-
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">
-                            CERT_002.pdf
+                        <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">CERT_002.pdf
                         </div>
                         <div class="text-[10px] font-mono text-gray-500">2025</div>
                     </div>
-
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
-                        ISSUED BY: IBM
-                    </div>
-
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">
-                        Cloud Application Developer
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">ISSUED BY: IBM</div>
+                    <p class="font-bold text-lg md:text-xl leading-snug mb-6 text-white/90">Cloud Application Developer
                     </p>
-
-                    <div class="font-mono text-neo-blue text-xs uppercase tracking-widest">
-                        Click to View Certificate →
-                    </div>
+                    <div class="font-mono text-neo-blue text-[10px] md:text-xs uppercase tracking-widest">Click to View
+                        Certificate →</div>
                 </a>
 
-
-                <!-- Certification Card 3 -->
-                <a href="Assets/certificates/Introduction_to_mearn_stack.pdf" target="_blank" class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
-                hover:border-neo-pink/50 hover:-translate-y-2 transition-all duration-500 
-                relative overflow-hidden text-left whitespace-normal">
-
+                <a href="Assets/certificates/Introduction_to_mearn_stack.pdf" target="_blank"
+                    class="flex-shrink-0 w-[320px] md:w-[450px] bg-neo-black border-4 border-white/10 p-6 md:p-8 shadow-hard hover:border-neo-pink/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-pink"></div>
                     <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
-
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-pink text-xs font-bold tracking-widest uppercase">
-                            CERT_003.pdf
+                        <div class="font-mono text-neo-pink text-xs font-bold tracking-widest uppercase">CERT_003.pdf
                         </div>
                         <div class="text-[10px] font-mono text-gray-500">2024</div>
                     </div>
-
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
-                        ISSUED BY: SimpleLearn
-                    </div>
-
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">
-                        Introduction to MERN Stack
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">ISSUED BY:
+                        SimpleLearn</div>
+                    <p class="font-bold text-lg md:text-xl leading-snug mb-6 text-white/90">Introduction to MERN Stack
                     </p>
-
-                    <div class="font-mono text-neo-pink text-xs uppercase tracking-widest">
-                        Click to View Certificate →
-                    </div>
+                    <div class="font-mono text-neo-pink text-[10px] md:text-xs uppercase tracking-widest">Click to View
+                        Certificate →</div>
                 </a>
 
-                <!-- Duplicate Set for Infinite Scroll -->
-                <!-- Just copy same 3 again for seamless marquee -->
-
-                <a href="Assets/certificates/certificate1.pdf" target="_blank" class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
-                hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 
-                relative overflow-hidden text-left whitespace-normal">
-
+                <a href="Assets/certificates/Full_stack_developer.pdf" target="_blank"
+                    class="flex-shrink-0 w-[320px] md:w-[450px] bg-neo-black border-4 border-white/10 p-6 md:p-8 shadow-hard hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 relative overflow-hidden text-left whitespace-normal">
                     <div class="absolute top-0 left-0 w-full h-1 bg-neo-green"></div>
                     <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
-
                     <div class="flex justify-between items-start mb-6">
-                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">
-                            CERT_001.pdf
+                        <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">CERT_001.pdf
                         </div>
                         <div class="text-[10px] font-mono text-gray-500">2025</div>
                     </div>
-
-                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
-                        ISSUED BY: Organization Name
+                    <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">ISSUED BY: Udemy
                     </div>
-
-                    <p class="font-bold text-xl leading-snug mb-6 text-white/90">
-                        Full Stack Web Development Certification
-                    </p>
-
-                    <div class="font-mono text-neo-green text-xs uppercase tracking-widest">
-                        Click to View Certificate →
-                    </div>
+                    <p class="font-bold text-lg md:text-xl leading-snug mb-6 text-white/90">Full Stack Web Development
+                        Certification</p>
+                    <div class="font-mono text-neo-green text-[10px] md:text-xs uppercase tracking-widest">Click to View
+                        Certificate →</div>
                 </a>
-
             </div>
         </div>
     </section>
 
-
-
-
-    <section id="contact" class="py-24 px-4 max-w-5xl mx-auto">
-        <div class="bg-white border-4 border-black shadow-hard-xl p-8 md:p-12 relative reveal mt-12">
+    <section id="contact" class="py-16 md:py-24 px-4 max-w-5xl mx-auto">
+        <div class="bg-white border-4 border-black shadow-hard-xl p-6 md:p-12 relative reveal mt-8 md:mt-12">
             <div
-                class="absolute -top-10 -left-6 bg-neo-yellow border-4 border-black px-6 py-2 shadow-hard rotate-[-5deg]">
-                <span class="font-black text-2xl">START A PROJECT</span>
+                class="absolute -top-6 -left-4 md:-top-10 md:-left-6 bg-neo-yellow border-4 border-black px-4 md:px-6 py-2 shadow-hard rotate-[-5deg] max-w-[90%] break-words z-10">
+                <span class="font-black text-xl md:text-2xl">START A PROJECT</span>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 pt-8 md:pt-0">
                 <div>
-                    <h2 class="text-6xl font-black uppercase mb-6 leading-[0.85]">Let's<br>Talk<br>Code.</h2>
-                    <p class="font-mono text-lg mb-8 text-gray-600">
+                    <h2 class="text-5xl md:text-6xl font-black uppercase mb-6 leading-[0.85] break-words">
+                        Let's<br>Talk<br>Code.</h2>
+                    <p class="font-mono text-base md:text-lg mb-8 text-gray-600">
                         I am currently available for freelance work and open to full-time opportunities.
                     </p>
                     <div class="space-y-4">
                         <div class="flex items-center gap-4">
                             <div
-                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
-                                <i class="ri-mail-line text-xl"></i>
+                                class="w-10 h-10 md:w-12 md:h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black shrink-0">
+                                <i class="ri-mail-line text-lg md:text-xl"></i>
                             </div>
                             <a href="mailto:sathwik677@gmail.com"
-                                class="text-xl font-bold hover:bg-neo-blue cursor-hover">sathwik677@gmail.com</a>
+                                class="text-base md:text-xl font-bold hover:bg-neo-blue cursor-hover break-all">sathwik677@gmail.com</a>
                         </div>
                         <div class="flex items-center gap-4">
                             <div
-                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
-                                <i class="ri-map-pin-line text-xl"></i>
+                                class="w-10 h-10 md:w-12 md:h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black shrink-0">
+                                <i class="ri-map-pin-line text-lg md:text-xl"></i>
                             </div>
-                            <span class="text-xl font-bold">Remote / Earth</span>
+                            <span class="text-base md:text-xl font-bold">Remote / Earth</span>
                         </div>
                     </div>
                 </div>
 
-                <form class="space-y-6 bg-gray-50 p-6 border-2 border-black">
+                <form class="space-y-5 bg-gray-50 p-4 md:p-6 border-2 border-black w-full">
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Identity</label>
                         <input type="text" placeholder="NAME / COMPANY"
-                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover w-full">
                     </div>
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Coordinates</label>
                         <input type="email" placeholder="EMAIL ADDRESS"
-                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover w-full">
                     </div>
                     <div class="flex flex-col">
                         <label class="font-mono font-bold mb-1 uppercase text-xs">Transmission</label>
                         <textarea rows="4" placeholder="PROJECT DETAILS..."
-                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"></textarea>
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover w-full"></textarea>
                     </div>
                     <button type="submit"
-                        class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
+                        class="w-full bg-neo-blue text-white font-black text-lg md:text-xl py-3 md:py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
                         TRANSMIT DATA
                     </button>
                 </form>
@@ -1160,18 +1131,20 @@
         </div>
     </section>
 
-    <footer class="bg-black text-white py-16 px-4 border-t-8 border-neo-green font-mono relative overflow-hidden">
-        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
-            <div class="col-span-1 md:col-span-2">
-                <h2 class="text-4xl font-black mb-6">SATHWIK.</h2>
-                <p class="text-gray-400 max-w-sm">
+    <footer
+        class="bg-black text-white py-12 md:py-16 px-4 border-t-8 border-neo-green font-mono relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-12 relative z-10">
+            <div class="col-span-1 md:col-span-2 text-center md:text-left">
+                <h2 class="text-4xl font-black mb-4 md:mb-6">SATHWIK.</h2>
+                <p class="text-gray-400 max-w-sm mx-auto md:mx-0 text-sm md:text-base">
                     Designing for the future with the raw aesthetics of the past. No cookies, no trackers, just code.
                 </p>
             </div>
 
-            <div>
-                <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2">SITEMAP</h3>
-                <ul class="space-y-2 text-gray-400">
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2 inline-block md:block w-full">
+                    SITEMAP</h3>
+                <ul class="space-y-2 text-gray-400 text-sm md:text-base">
                     <li><a href="#"
                             class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Home</a>
                     </li>
@@ -1187,9 +1160,10 @@
                 </ul>
             </div>
 
-            <div>
-                <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2">SOCIALS</h3>
-                <div class="flex gap-4">
+            <div class="text-center md:text-left">
+                <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2 inline-block md:block w-full">
+                    SOCIALS</h3>
+                <div class="flex justify-center md:justify-start gap-4">
                     <a href="https://leetcode.com/u/arham43-ops/"
                         class="text-2xl hover:text-neo-blue transition-colors cursor-hover"><i
                             class="ri-code-fill"></i></a>
@@ -1206,12 +1180,13 @@
             </div>
         </div>
 
-        <div class="text-center mt-16 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+        <div
+            class="text-center mt-12 md:mt-16 pt-8 border-t border-gray-800 text-gray-500 text-xs md:text-sm relative z-10">
             <p>© 2025 XAVY.exe // SYSTEM_END</p>
         </div>
 
         <div
-            class="absolute bottom-0 left-0 w-full text-[20vw] font-black text-white opacity-[0.03] leading-none select-none pointer-events-none text-center">
+            class="absolute bottom-0 left-0 w-full text-[25vw] md:text-[20vw] font-black text-white opacity-[0.03] leading-none select-none pointer-events-none text-center">
             BRUTAL
         </div>
     </footer>
@@ -1221,28 +1196,57 @@
         const cursor = document.getElementById('cursor');
         const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, textarea');
 
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            cursor.style.transform = `translate(-50%, -50%)`;
-        });
+        // Only track mouse movement if it's a non-touch device (fallback for screen resizes)
+        if (window.matchMedia("(pointer: fine)").matches) {
+            document.addEventListener('mousemove', (e) => {
+                cursor.style.left = e.clientX + 'px';
+                cursor.style.top = e.clientY + 'px';
+                cursor.style.transform = `translate(-50%, -50%)`;
+            });
 
-        // Add hover effect to cursor
-        hoverElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.width = '60px';
-                cursor.style.height = '60px';
-                cursor.style.backgroundColor = '#FBFF48'; // Neo Yellow
-                cursor.style.mixBlendMode = 'normal';
-                cursor.style.border = '2px solid black';
+            // Add hover effect to cursor
+            hoverElements.forEach(el => {
+                el.addEventListener('mouseenter', () => {
+                    cursor.style.width = '60px';
+                    cursor.style.height = '60px';
+                    cursor.style.backgroundColor = '#FBFF48'; // Neo Yellow
+                    cursor.style.mixBlendMode = 'normal';
+                    cursor.style.border = '2px solid black';
+                });
+                el.addEventListener('mouseleave', () => {
+                    cursor.style.width = '24px';
+                    cursor.style.height = '24px';
+                    cursor.style.backgroundColor = '#fff';
+                    cursor.style.mixBlendMode = 'difference';
+                    cursor.style.border = 'none';
+                });
             });
-            el.addEventListener('mouseleave', () => {
-                cursor.style.width = '24px';
-                cursor.style.height = '24px';
-                cursor.style.backgroundColor = '#fff';
-                cursor.style.mixBlendMode = 'difference';
-                cursor.style.border = 'none';
-            });
+        }
+
+        // Mobile Menu Toggle Logic
+        const mobileMenuBtn = document.getElementById('mobile-menu-toggle');
+        const mobileMenuCloseBtn = document.getElementById('mobile-menu-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        function openMenu() {
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden'; // prevent scrolling
+        }
+
+        function closeMenu() {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = 'auto'; // allow scrolling
+        }
+
+        mobileMenuBtn.addEventListener('click', openMenu);
+        mobileMenuCloseBtn.addEventListener('click', closeMenu);
+
+        // Close menu when clicking a link
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', closeMenu);
         });
 
         // GitHub API Integration
@@ -1251,20 +1255,17 @@
             const apiUrl = `https://api.github.com/users/${username}`;
             const reposUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=10`;
 
-            // 1. Fetch Basic Profile Stats (Left Column)
             try {
                 const response = await fetch(apiUrl);
                 if (!response.ok) throw new Error(`Profile error! status: ${response.status}`);
                 const data = await response.json();
 
-                // Update basic counts
                 const reposEl = document.getElementById('repos-count');
                 const followersEl = document.getElementById('followers-count');
 
                 if (reposEl) reposEl.textContent = data.public_repos || '0';
                 if (followersEl) followersEl.textContent = data.followers || '0';
 
-                // Format Date
                 if (data.created_at) {
                     const date = new Date(data.created_at);
                     const formattedDate = date.toLocaleDateString('en-US', {
@@ -1275,7 +1276,6 @@
                     if (joinedEl) joinedEl.textContent = formattedDate;
                 }
 
-                // Approx Commits Logic
                 const contribValue = `${(data.public_repos * 20) + (data.followers * 5)}+`;
                 const contribHeader = document.getElementById('total-contributions');
                 const contribGrid = document.getElementById('total-contributions-grid');
@@ -1286,38 +1286,33 @@
                 console.error('Error fetching Profile:', error);
             }
 
-            // 2. Fetch Projects & Languages (Right Column)
             try {
                 const repoResponse = await fetch(reposUrl);
                 if (!repoResponse.ok) throw new Error(`Repo error! status: ${repoResponse.status}`);
                 const repos = await repoResponse.json();
 
-                // --- RENDER RECENT PROJECTS ---
                 const projectContainer = document.getElementById('gh-projects-list');
                 if (projectContainer) {
-                    projectContainer.innerHTML = ''; // Clear loading state
-
-                    // CHANGE THIS LINE: Change 3 to 4 to fill the gap
+                    projectContainer.innerHTML = '';
                     const topRepos = repos.slice(0, 4);
 
                     topRepos.forEach(repo => {
                         const langColor = getLanguageColor(repo.language);
-
                         const html = `
                     <a href="${repo.html_url}" target="_blank" class="group block border border-neo-green/30 bg-neo-black/40 hover:bg-neo-green/10 p-3 transition-all relative overflow-hidden">
                         <div class="absolute inset-y-0 left-0 w-1 bg-neo-green/50 group-hover:bg-neo-green transition-colors"></div>
                         <div class="flex justify-between items-start mb-1">
-                            <h5 class="font-bold text-white text-sm uppercase tracking-tight group-hover:text-neo-green transition-colors">
+                            <h5 class="font-bold text-white text-[12px] md:text-sm uppercase tracking-tight group-hover:text-neo-green transition-colors truncate pr-2">
                                 ${repo.name}
                             </h5>
-                            <div class="flex items-center gap-1 text-[10px] text-neo-green bg-neo-green/10 px-1.5 py-0.5 border border-neo-green/20">
+                            <div class="flex items-center gap-1 text-[10px] text-neo-green bg-neo-green/10 px-1.5 py-0.5 border border-neo-green/20 shrink-0">
                                 <i class="ri-star-fill"></i> ${repo.stargazers_count}
                             </div>
                         </div>
-                        <p class="text-gray-400 text-[10px] leading-relaxed truncate font-mono mb-2">
+                        <p class="text-gray-400 text-[9px] md:text-[10px] leading-relaxed truncate font-mono mb-2">
                             ${repo.description || 'No description provided.'}
                         </p>
-                        <div class="flex justify-between items-center text-[9px] font-mono text-gray-500 uppercase">
+                        <div class="flex justify-between items-center text-[8px] md:text-[9px] font-mono text-gray-500 uppercase">
                             <span class="flex items-center gap-1">
                                 <span class="w-1.5 h-1.5 rounded-full" style="background-color: ${langColor}"></span>
                                 ${repo.language || 'Code'}
@@ -1330,12 +1325,9 @@
                     });
                 }
 
-                // --- RENDER LANGUAGES STATS ---
                 const langContainer = document.getElementById('gh-languages-list');
                 if (langContainer) {
                     langContainer.innerHTML = '';
-
-                    // Calculate Language Counts from fetched repos
                     const langCounts = {};
                     let total = 0;
                     repos.forEach(repo => {
@@ -1345,19 +1337,18 @@
                         }
                     });
 
-                    // Convert to array and sort
                     const languages = Object.entries(langCounts)
                         .map(([name, count]) => ({ name, percentage: Math.round((count / total) * 100) }))
                         .sort((a, b) => b.percentage - a.percentage)
-                        .slice(0, 4); // Top 4 only
+                        .slice(0, 4);
 
                     languages.forEach(lang => {
                         const color = getLanguageColor(lang.name);
                         const html = `
                     <div class="group">
                         <div class="flex justify-between mb-1">
-                            <span class="text-white group-hover:text-neo-green transition-colors">[ ${lang.name} ]</span>
-                            <span class="text-neo-green font-bold">${lang.percentage}%</span>
+                            <span class="text-white group-hover:text-neo-green transition-colors text-[10px] md:text-xs">[ ${lang.name} ]</span>
+                            <span class="text-neo-green font-bold text-[10px] md:text-xs">${lang.percentage}%</span>
                         </div>
                         <div class="w-full h-1.5 bg-gray-800 border border-white/10 overflow-hidden">
                             <div class="h-full bg-neo-green shadow-[0_0_10px_rgba(51,255,87,0.5)] transform origin-left transition-transform duration-1000 scale-x-0" 
@@ -1372,13 +1363,11 @@
 
             } catch (error) {
                 console.error('Error fetching Repos:', error);
-                // Fallback UI
                 const projectContainer = document.getElementById('gh-projects-list');
                 if (projectContainer) projectContainer.innerHTML = '<div class="text-red-500 font-mono text-xs border border-red-500 p-2">CONNECTION_LOST: API Limit Reached</div>';
             }
         }
 
-        // Helper: Simple Color Mapper for common languages
         function getLanguageColor(lang) {
             const colors = {
                 'JavaScript': '#f7df1e',
@@ -1392,17 +1381,13 @@
                 'Vue': '#41b883',
                 'React': '#61dafb'
             };
-            return colors[lang] || '#33FF57'; // Default Neo-Green
+            return colors[lang] || '#33FF57';
         }
 
-        // Add CSS keyframe for the bar animation if not present
         const style = document.createElement('style');
-        style.innerHTML = `
-    @keyframes fillBar { to { transform: scaleX(1); } }
-`;
+        style.innerHTML = `@keyframes fillBar { to { transform: scaleX(1); } }`;
         document.head.appendChild(style);
 
-        // Call on page load
         fetchGitHubStats();
 
         // Scroll Reveal Logic
