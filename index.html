@@ -1,1732 +1,1341 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SATHWIK - Technologist Portfolio</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description"
+        content="Arham | Professional Full Stack Developer specializing in high-performance NeoBrutalist web experiences. Let's build the future with raw aesthetics.">
+    <meta name="keywords"
+        content="Arham, Full Stack Developer, NeoBrutalist, Portfolio, Web Development, UI/UX, Javascript, React">
+    <meta name="author" content="Arham">
+    <link rel="canonical" href="https://arham-portfolio-v2.netlify.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://arham-portfolio-v2.netlify.app/">
+    <meta property="og:title" content="ARHAM | Full Stack Brutalist">
+    <meta property="og:description"
+        content="Professional Full Stack Developer specializing in high-performance NeoBrutalist web experiences.">
+    <meta property="og:image" content="https://arham-portfolio-v2.netlify.app/Assets/images/og-image.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://arham-portfolio-v2.netlify.app/">
+    <meta property="twitter:title" content="ARHAM | Full Stack Brutalist">
+    <meta property="twitter:description"
+        content="Professional Full Stack Developer specializing in high-performance NeoBrutalist web experiences.">
+    <meta property="twitter:image" content="https://arham-portfolio-v2.netlify.app/Assets/images/og-image.png">
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-TLNG322R');</script>
+    <!-- End Google Tag Manager -->
+    <title>SATHWIK | Full Stack Brutalist</title>
+
+    <!-- Theme & Performance -->
+    <meta name="theme-color" content="#121212">
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@700&family=Space+Grotesk:wght@800&display=swap"
+        as="style">
+
+    <!-- JSON-LD Structured Data for Search Engines -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Arham",
+      "url": "https://arham-portfolio-v2.netlify.app/",
+      "jobTitle": "Full Stack Developer",
+      "image": "https://arham-portfolio-v2.netlify.app/Assets/images/logo.png",
+      "knowsAbout": ["React", "Python", "Java", "Node.js", "Django", "Three.js", "UI/UX Design", "NeoBrutalist Design"],
+      "sameAs": [
+        "https://github.com/Arham43-ops",
+        "https://leetcode.com/u/arham43-ops/"
+      ],
+      "description": "Professional Full Stack Developer specializing in high-performance NeoBrutalist web experiences. Let's build the future with raw aesthetics."
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link type="logo" rel="icon" href="Assets/images/title_icon.png">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-   <!--<link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/197274423?v=4" type="image/x-icon">--> 
+    <link
+        href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700;800&family=Space+Grotesk:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'neo-yellow': '#FBFF48',
+                        'neo-pink': '#FF70A6',
+                        'neo-blue': '#3B82F6',
+                        'neo-green': '#33FF57',
+                        'neo-purple': '#A855F7',
+                        'neo-orange': '#FF9F1C',
+                        'neo-red': '#FF2A2A',
+                        'neo-white': '#FFFDF5',
+                        'neo-black': '#121212',
+                    },
+                    fontFamily: {
+                        'display': ['"Space Grotesk"', 'sans-serif'],
+                        'mono': ['"JetBrains Mono"', 'monospace'],
+                    },
+                    boxShadow: {
+                        'hard': '4px 4px 0px 0px #000',
+                        'hard-sm': '2px 2px 0px 0px #000',
+                        'hard-lg': '8px 8px 0px 0px #000',
+                        'hard-xl': '12px 12px 0px 0px #000',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        /* Custom styles */
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px; /* Adjust based on your sticky header's height */
-        }
+        /* Base Styles */
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: #000000; /* Deep black background */
-            color: #dddddd; /* Light gray text for good contrast */
-            overflow-x: hidden; /* Prevent horizontal scrollbars */
-        }
-        body.modal-open {
-            overflow-y: hidden; /* Prevent background scroll when modal is open */
-        }
-
-        /* Particles container styling */
-        #particles-js {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0; /* Behind hero content */
+            cursor: none;
+            /* We use a custom cursor */
+            background-color: #FFFDF5;
+            background-image:
+                radial-gradient(#000 1px, transparent 1px),
+                linear-gradient(to right, #e5e5e5 1px, transparent 1px),
+                linear-gradient(to bottom, #e5e5e5 1px, transparent 1px);
+            background-size: 40px 40px, 100px 100px, 100px 100px;
         }
 
-        /* Hero section styling */
-        #hero {
-            position: relative; /* For z-indexing of particles */
-            overflow: hidden; /* Ensures particles don't overflow */
-            height: 95vh; /* Reduced height */
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            text-align: center;
-            background: radial-gradient(ellipse at center, #1a1a1a 0%, #000000 70%); /* Subtle gradient */
-        }
-        .hero-content-wrapper {
-            position: relative;
-            z-index: 1; /* Above particles */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 1rem; /* Padding for smaller screens */
-        }
-        .hero-title {
-            color: #ffffff; /* Pure white for main title */
-        }
-        .hero-subtitle { /* Adjusted for better readability and modern feel */
-            color: #cccccc; /* Slightly softer white */
-            text-shadow: 0 0 8px rgba(204, 204, 204, 0.2); /* Subtle glow */
-            font-weight: 500; /* Medium weight */
-            font-size: 1.375rem; /* Base size (22px) */
-        }
-        @media (min-width: 640px) { /* sm breakpoint */
-            .hero-subtitle {
-                font-size: 1.625rem; /* Larger on small screens (26px) */
-            }
-        }
-        @media (min-width: 768px) { /* md breakpoint */
-            .hero-subtitle {
-                font-size: 1.875rem; /* Even larger on medium screens (30px) */
-            }
-        }
-
-        /* Scroll Down Arrow */
-        .scroll-down-arrow {
-            position: absolute;
-            bottom: 60px; /* Increased distance from bottom */
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-            cursor: pointer;
-            animation: bounce 2.5s infinite; /* Smoother bounce */
-        }
-        .scroll-down-arrow svg {
-            width: 32px; /* Slightly larger */
-            height: 32px;
-            color: #777777; /* Muted gray */
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-        .scroll-down-arrow:hover svg {
-            color: #aaaaaa; /* Lighter gray on hover */
-            transform: translateY(-3px); /* Slight lift on hover */
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateX(-50%) translateY(0); }
-            40% { transform: translateX(-50%) translateY(-15px); } /* Adjusted bounce height */
-            60% { transform: translateX(-50%) translateY(-7px); }
-        }
-
-        /* Enhanced Styles - Theme Shifted to Grayscale/Black */
-        .hero-cta {
-            background-image: linear-gradient(to right, #555555 0%, #333333 100%); /* Dark gray gradient */
-            color: #ffffff; /* White text */
-            background-size: 200% auto;
-            transition: background-position 0.4s ease-out, transform 0.2s ease-out, box-shadow 0.3s ease;
-            box-shadow: 0 5px 18px rgba(150, 150, 150, 0.15); /* Softer shadow matching dark theme */
-            animation: pulse-cta 2.5s infinite ease-in-out; /* Added subtle pulse animation */
-        }
-        .hero-cta:hover {
-            background-position: right center;
-            transform: scale(1.07); /* Slightly more pronounced hover scale */
-            box-shadow: 0 8px 25px rgba(180, 180, 180, 0.25); /* Enhanced shadow on hover */
-            animation-play-state: paused; /* Pause pulse on hover */
-        }
-
-        @keyframes pulse-cta { /* Subtle pulse for hero CTA */
-            0% { transform: scale(1); box-shadow: 0 5px 18px rgba(150, 150, 150, 0.15); }
-            50% { transform: scale(1.03); box-shadow: 0 7px 22px rgba(170, 170, 170, 0.2); }
-            100% { transform: scale(1); box-shadow: 0 5px 18px rgba(150, 150, 150, 0.15); }
-        }
-
-
-        /* Card Styling Improvements */
-        .card { /* Base card style for all cards (projects, skills, experience) */
-            transition: transform 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
-            background-color: #1e1e1e; /* Darker card background */
-            border: 1px solid #333333; /* Subtle border */
-            position: relative;
-            overflow: hidden; /* For effects like image zoom or overlays */
-            box-shadow: 0 2px 10px rgba(0,0,0,0.4); /* Default subtle shadow */
-            border-radius: 0.5rem; /* Consistent rounded corners */
-        }
-        .card:hover {
-            transform: translateY(-8px) scale(1.03); /* Enhanced hover effect */
-            box-shadow: 0 12px 24px rgba(0,0,0,0.6), 0 0 15px rgba(120,120,120,0.2); /* More pronounced shadow and subtle glow */
-            border-color: #666666; /* Border color change on hover */
-        }
-        .project-card .project-content { /* Specific to project cards if needed */
-            min-height: 200px; /* Ensure consistent card height for content, slightly increased */
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .project-thumbnail-container {
-            position: relative; /* For overlay */
-            overflow: hidden; /* To clip image effects */
-        }
-        .project-thumbnail-container img {
-            transition: transform 0.3s ease-out;
-        }
-        .project-card:hover .project-thumbnail-container img {
-            transform: scale(1.05); /* Subtle zoom on image hover */
-        }
-        .project-thumbnail-overlay {
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background-color: rgba(0, 0, 0, 0.65); /* Darker overlay */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            transition: opacity 0.3s ease-in-out;
-            pointer-events: none; /* Allow clicks to pass through if no interactive elements */
-        }
-        .project-card:hover .project-thumbnail-overlay {
-            opacity: 1;
-        }
-        .project-thumbnail-overlay svg { /* Style for icon inside overlay */
-            width: 40px;
-            height: 40px;
-            color: white;
-        }
-
-        /* Section Title Styling */
-        .section-title-container { /* Wrapper for centering and spacing */
-            text-align: center;
-            margin-bottom: 4rem; /* Increased bottom margin */
-        }
-        .section-title {
-            position: relative;
-            display: inline-block; /* Allows ::after to be positioned relative to text width */
-            padding-bottom: 0.75rem; /* Space for the underline */
-            color: #dddddd; /* Light gray for section titles */
-            text-shadow: 0 1px 3px rgba(0,0,0,0.5); /* Subtle text shadow */
-        }
-        .section-title::after {
-            content: ''; position: absolute; bottom: 0; left: 50%; width: 0; height: 4px; /* Thicker underline */
-            background: linear-gradient(to right, #777777, #555555); /* Slightly brighter Gray gradient for underline */
-            border-radius: 2px;
-            transition: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1); /* Smoother transition */
-            transform: translateX(-50%); /* Center the underline */
-            opacity: 0;
-        }
-        .section-title.animate-underline::after { width: 70%; opacity: 1; }
-
-        /* Navigation Styles */
-        header {
-            position: sticky; top: 0; z-index: 100; width: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Dark, slightly transparent background */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
-            border-bottom: 1px solid #222222; /* Subtle border */
-        }
-        .header-container { height: 70px; } /* Fixed header height */
-        .logo-name a { transition: color 0.2s ease-in-out, text-shadow 0.2s ease-in-out; color: #ffffff; }
-        .logo-name a:hover { color: #cccccc; text-shadow: 0 0 8px rgba(204, 204, 204, 0.4); }
-        nav a.nav-link {
-            padding: 0.75rem 1.25rem; /* Generous padding */
-            border-radius: 0.375rem;
-            transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, transform 0.2s ease, border-bottom-color 0.3s ease, box-shadow 0.2s ease;
-            color: #aaaaaa; /* Medium gray for nav links */
-            font-weight: 500; /* Medium weight */
-            position: relative;
-            border-bottom: 2px solid transparent;
-        }
-        nav a.nav-link:hover {
-            color: #ffffff; /* White on hover */
-            transform: translateY(-1px);
-            border-bottom-color: #999999; /* Darker gray underline on hover */
-            background-color: rgba(255,255,255,0.05); /* Subtle background highlight */
-        }
-        nav a.nav-link.active {
-            color: #ffffff;
-            font-weight: 600; /* Bolder active link */
-            border-bottom-color: #eeeeee; /* Bright underline for active link */
-            background-color: rgba(255,255,255,0.08);
-        }
-
-        #mobile-menu-button { padding: 0.5rem; border-radius: 0.375rem; transition: background-color 0.2s ease-in-out; color: #aaaaaa; }
-        #mobile-menu-button:hover { background-color: rgba(51, 51, 51, 0.3); color: #dddddd; }
-        #mobile-menu { background-color: rgba(10, 10, 10, 0.98); border-top: 1px solid #222222; padding: 1rem 0; } /* Darker mobile menu */
-        #mobile-menu a { display: block; padding: 0.85rem 1.5rem; text-align: center; border-radius: 0; transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; color: #aaaaaa; font-weight: 500; }
-        #mobile-menu a:hover { background-color: rgba(51, 51, 51, 0.5); color: #ffffff; }
-        #mobile-menu a.active {
-            background-color: rgba(68, 68, 68, 0.7);
-            color: #ffffff;
-            font-weight: 600;
-        }
-
-        /* Base Styles for Animations */
-        .animate-on-load { opacity: 0; } /* Initial state for load animations */
-        .animate-letters .letter { display: inline-block; line-height: 1em; opacity: 0; }
-        
-        /* Skill Bar Styling */
-        .skill-bar-fill {
-            width: 0%; /* Initial width for animation */
-            background-image: linear-gradient(to right, #888888, #666666) !important; /* Brighter gray gradient for skill bars */
-        }
-        /* Section Backgrounds for Contrast */
-        #about, #portfolio, #contact, #tech-stack { background-color: #0a0a0a; } /* Slightly off-black for some sections */
-        #skills, #experience { background-color: #000000; } /* Pure black for others */
-        .skill-bar-bg { background-color: #2a2a2a; } /* Dark background for skill bar track */
-        
-        .skill-item h3 {
-            text-align: center; /* Center skill titles */
-        }
-        /* Typography contrast improvement */
-        .skill-item p, .project-summary, #modal-project-description, .experience-item ul li, .about-text p {
-            color: #dddddd; /* Ensuring text is light enough */
-        }
-        .experience-item p.font-medium, .workshop-item p.font-medium { /* For subheadings in experience */
-            color: #cccccc;
-        }
-        .experience-item p.text-sm, .workshop-item p.text-sm { /* For dates/locations */
-            color: #aaaaaa;
-        }
-
-        /* --- Experience Timeline Styles --- */
-        .timeline-container {
-            position: relative;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        /* REMOVED the ::after pseudo-element for the static line */
-        .timeline-container::after {
-           display: none;
-        }
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-            opacity: 0; /* Initial state for animation */
-        }
-        /* The circles on the timeline */
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: #444;
-            border: 4px solid #777;
-            top: 25px;
-            border-radius: 50%;
-            z-index: 1;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-        }
-        .timeline-item:hover::after {
-            background-color: #999;
-            transform: scale(1.1);
-        }
-        /* Place the container to the left */
-        .timeline-left {
-            left: 0;
-        }
-        /* Place the container to the right */
-        .timeline-right {
-            left: 50%;
-        }
-        /* Add arrows to the left container (pointing right) */
-        .timeline-left .timeline-content::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            right: 20px; /* Adjusted from -20px */
-            border: medium solid #333;
-            border-width: 10px 0 10px 10px;
-            border-color: transparent transparent transparent #1e1e1e;
-        }
-        /* Add arrows to the right container (pointing left) */
-        .timeline-right .timeline-content::before {
-            content: " ";
-            height: 0;
-            position: absolute;
-            top: 22px;
-            width: 0;
-            z-index: 1;
-            left: 20px; /* Adjusted from -20px */
-            border: medium solid #333;
-            border-width: 10px 10px 10px 0;
-            border-color: transparent #1e1e1e transparent transparent;
-        }
-        /* Fix the circle for containers on the right side */
-        .timeline-right::after {
-            left: -10px;
-        }
-        .timeline-content {
-           position: relative;
-        }
-
-        /* --- SVG Path Animation Styles (NEW) --- */
-        .timeline-svg-wrapper {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            pointer-events: none; /* Allows clicks on items behind it */
-        }
-        #timeline-path {
-            stroke-dasharray: 1; /* These will be set by JS */
-            stroke-dashoffset: 1;
-        }
-        /* Removed #path-marker CSS, styles are now inline on the SVG element */
-
-
-        /* Media queries - Responsive timeline */
-        @media screen and (max-width: 768px) {
-            /* Keep the old ::after for the line on mobile for simplicity */
-            .timeline-container::after { 
-                display: block; /* Re-enable for mobile */
-                content: '';
-                position: absolute;
-                width: 6px;
-                background-color: #444;
-                top: 0;
-                bottom: 0;
-                left: 31px; 
-                margin-left: -3px;
-            }
-             .timeline-svg-wrapper {
-                display: none; /* Hide SVG animation on mobile */
-            }
-            .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
-            .timeline-left, .timeline-right { left: 0%; }
-            .timeline-left .timeline-content::before, .timeline-right .timeline-content::before {
-                left: -20px; /* This needs fixing - it should be `right` on left items */
-                border-width: 10px 10px 10px 0;
-                border-color: transparent #1e1e1e transparent transparent;
-            }
-             .timeline-left .timeline-content::before {
-                left: 50px; /* Reposition arrow to point from the line */
-             }
-            .timeline-left::after, .timeline-right::after { left: 21px; }
-        }
-
-        /* General Section Padding */
-        section { padding-top: 5rem; padding-bottom: 5rem; width: 100%; } /* Default section padding */
-        @media (min-width: 768px) { section { padding-top: 7rem; padding-bottom: 7rem; } } /* Increased padding for larger screens */
-        a { transition: color 0.2s ease-in-out; } /* Smooth color transition for all links */
-        footer { background-color: #000000; padding: 2rem 0; width: 100%; border-top: 1px solid #1c1c1c;} /* Dark footer */
-
-        /* Modal Styles */
-        .modal-overlay {
-            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-            background-color: rgba(0, 0, 0, 0.85); /* Darker overlay, less transparency */
-            backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); /* For Safari */
-            display: flex; justify-content: center; align-items: center;
-            z-index: 1050; opacity: 0; visibility: hidden;
-            transition: opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .modal-overlay.active { opacity: 1; visibility: visible; }
-        .modal-content {
-            background-color: #1a1a1a; /* Dark modal background */
-            color: #dddddd; /* Light text in modal */
-            padding: 2rem; border-radius: 0.75rem; /* 12px */
-            box-shadow: 0 25px 50px -12px rgba(220, 220, 220, 0.1); /* Softer shadow for dark theme */
-            width: 90%; max-width: 700px; max-height: 90vh; /* Responsive sizing, slightly wider */
-            overflow-y: auto; position: relative;
-            transform: scale(0.9) translateY(20px); opacity: 0;
-            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .modal-overlay.active .modal-content { transform: scale(1) translateY(0); opacity: 1;}
-        .modal-close-btn {
-            position: absolute; top: 0.75rem; right: 0.75rem; /* 12px */
-            background-color: rgba(51, 51, 51, 0.5); /* Semi-transparent dark button */
-            border-radius: 9999px; /* Circular button */
-            width: 36px; height: 36px; /* Fixed size */
-            display: flex; align-items: center; justify-content: center;
-            border: none; color: #aaaaaa; font-size: 1.25rem; /* 20px */ line-height: 1;
-            cursor: pointer; transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
-        }
-        .modal-close-btn:hover { background-color: rgba(68, 68, 68, 0.7); color: #dddddd; transform: rotate(90deg); }
-        #modal-project-image {
-            width: 100%; height: auto; max-height: 350px; /* Increased max height */
-            object-fit: cover; border-radius: 0.5rem; /* 8px */ margin-bottom: 1.5rem; /* 24px */
-            border: 1px solid #333333; /* Subtle border for image */
-        }
-        #modal-project-title { color: #ffffff; margin-bottom: 0.75rem;} /* White title in modal */
-        #modal-project-description { color: #cccccc; line-height: 1.7; margin-bottom: 1.5rem; }
-        .modal-project-links { margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap; }
-
-
-        /* Consistent Button Styling */
-        .btn-primary, .btn-secondary, .btn-tertiary {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-weight: 500;
-            padding: 0.625rem 1.25rem;
-            border-radius: 0.5rem;
-            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            text-align: center;
-            min-height: 44px;
-            min-width: 44px;
-            border: 2px solid transparent;
-        }
-        .btn-primary {
-            background-image: linear-gradient(to right, #666666 0%, #444444 100%);
-            color: #ffffff;
-            border-color: #555555;
-        }
-        .btn-primary:hover {
-            background-image: linear-gradient(to right, #777777 0%, #555555 100%);
-            border-color: #777777;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 4px 12px rgba(200,200,200,0.15);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid #555555;
-            color: #bbbbbb;
-        }
-        .btn-secondary:hover {
-            background-color: rgba(85, 85, 85, 0.2);
-            color: #dddddd;
-            border-color: #777777;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 4px 12px rgba(200,200,200,0.1);
-        }
-         .btn-tertiary { /* For "See More/Less" button - keeping style if used elsewhere, but not for workshop toggle now */
-            background-color: rgba(60, 60, 60, 0.3);
-            border: 1px solid #444444;
-            color: #aaaaaa;
-            padding: 0.375rem 0.75rem; /* Smaller padding */
-            font-size: 0.875rem; /* Smaller font */
-            min-height: auto; /* Override default min-height */
-        }
-        .btn-tertiary:hover {
-            background-color: rgba(80, 80, 80, 0.4);
-            border-color: #666666;
-            color: #cccccc;
-        }
-        
-        .btn-outline-gray {
-            border: 2px solid #555555;
-            color: #bbbbbb;
-        }
-        .btn-outline-gray:hover {
-            background-color: rgba(85, 85, 85, 0.2);
-            color: #dddddd;
-            border-color: #777777;
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 4px 12px rgba(200,200,200,0.15);
-        }
-        .project-details-link {
-            color: #bbbbbb;
-            text-decoration: none;
-            position: relative;
-            padding-bottom: 2px;
-        }
-        .project-details-link::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 1px;
-            display: block;
-            margin-top: 2px;
-            right: 0;
-            background: #dddddd;
-            transition: width .3s ease, background-color .3s ease;
-            -webkit-transition: width .3s ease, background-color .3s ease;
-        }
-        .project-details-link:hover::after {
-            width: 100%;
-            left: 0;
-            background-color: #ffffff;
-        }
-        .project-details-link:hover {
-            color: #ffffff;
-        }
-
-        /* Section Divider */
-        .section-divider {
-            border: none;
-            height: 1px;
-            background: linear-gradient(to right, transparent, #333333, transparent); /* Fading gradient */
-            margin-top: 4rem; /* Default top margin */
-            margin-bottom: 5rem; /* Default bottom margin */
-        }
-        @media (min-width: 768px) {
-            .section-divider {
-                margin-top: 6rem; /* Larger margins on md screens and up */
-                margin-bottom: 7rem;
-            }
-        }
-
-        /* Tech Stack Specific Styles */
-     /*  .tech-icon-grid {
-        }
-        .tech-icon {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            background-color: #2a2a2a;
-            border-radius: 0.5rem;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            min-height: 100px;
-            opacity: 0;
-        }
-        .tech-icon:hover {
-            transform: translateY(-4px) scale(1.05);
-            box-shadow: 0 6px 15px rgba(200,200,200,0.12);
-        }
-        .tech-icon svg {
-            width: 40px;
-            height: 40px;
-            margin-bottom: 0.5rem;
-            color: #aaaaaa;
-            transition: color 0.2s ease;
-        }
-        .tech-icon:hover svg {
-            color: #cccccc;
-        }
-        .tech-icon span {
-            font-size: 0.875rem;
-            color: #bbbbbb;
-            transition: color 0.2s ease;
-            text-align: center;
-        }
-        .tech-icon:hover span {
-            color: #dddddd;
-        }
-
-        */
-        /* Focus visible for accessibility */
-        *:focus-visible {
-            outline: 2px solid #aaaaaa; /* Clear focus outline */
-            outline-offset: 2px;
-        }
-
-        /* AI Assistant FAB */
-        #ai-assistant-fab {
+        /* Custom Cursor */
+        #cursor {
+            pointer-events: none;
             position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 1000;
-            background-image: linear-gradient(to right, #777777 0%, #555555 100%);
-            color: white;
-            width: 60px;
-            height: 60px;
-            border-radius: 9999px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 8px 25px rgba(180, 180, 180, 0.25);
-            cursor: pointer;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        #ai-assistant-fab:hover {
-            transform: scale(1.1);
-            box-shadow: 0 12px 30px rgba(200, 200, 200, 0.3);
+            z-index: 9999;
+            mix-blend-mode: difference;
+            transition: width 0.2s, height 0.2s, background-color 0.2s, transform 0.1s;
         }
 
-        /* AI Chat Modal */
-        #ai-chat-modal-content {
+        /* Animations */
+        .marquee-container {
+            overflow: hidden;
+        }
+
+        .marquee-content {
             display: flex;
-            flex-direction: column;
-            height: 100%;
+            animation: scroll 40s linear infinite;
+            width: max-content;
         }
-        #ai-chat-messages {
-            flex-grow: 1;
-            overflow-y: auto;
-            padding: 1rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
+
+        .marquee-container:hover .marquee-content {
+            animation-play-state: paused;
         }
-        .chat-message {
-            padding: 0.75rem 1rem;
-            border-radius: 0.75rem;
-            max-width: 80%;
-            line-height: 1.5;
-        }
-        .chat-message.user {
-            background-color: #444;
-            color: #fff;
-            align-self: flex-end;
-            border-bottom-right-radius: 0.25rem;
-        }
-        .chat-message.assistant {
-            background-color: #2a2a2a;
-            color: #ddd;
-            align-self: flex-start;
-            border-bottom-left-radius: 0.25rem;
-        }
-        #ai-chat-input-container {
-            border-top: 1px solid #333;
-            padding: 1rem;
-            display: flex;
-            gap: 0.5rem;
-        }
-        #ai-chat-input {
-            flex-grow: 1;
-            background-color: #333;
-            border: 1px solid #555;
-            color: #fff;
-            border-radius: 0.5rem;
-            padding: 0.75rem;
-        }
-        #ai-chat-input:focus {
-            outline: none;
-            border-color: #888;
-            box-shadow: 0 0 0 2px rgba(136, 136, 136, 0.3);
-        }
-        #ai-chat-send-btn {
-            background-color: #555;
-            color: #fff;
-            border: none;
-            padding: 0.75rem 1rem;
-            border-radius: 0.5rem;
-            cursor: pointer;
-            transition: background-color 0.2s ease;
-        }
-        #ai-chat-send-btn:hover {
-            background-color: #666;
-        }
-        #ai-chat-send-btn:disabled {
-            background-color: #333;
-            cursor: not-allowed;
-        }
-        .typing-indicator span {
+
+        .marquee-content-reverse {
             display: inline-block;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background-color: #777;
-            animation: bounce-dot 1.4s infinite ease-in-out both;
-        }
-        .typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
-        .typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes bounce-dot {
-            0%, 80%, 100% { transform: scale(0); }
-            40% { transform: scale(1.0); }
+            animation: scroll-reverse 20s linear infinite;
         }
 
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+
+        @keyframes scroll-reverse {
+            0% {
+                transform: translateX(-50%);
+            }
+
+            100% {
+                transform: translateX(0);
+            }
+        }
+
+        /* Reveal Animation */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Glitch Effect on Hover */
+        .glitch-hover:hover {
+            animation: glitch-anim 0.3s cubic-bezier(.25, .46, .45, .94) both infinite;
+            color: #FF2A2A;
+        }
+
+        @keyframes glitch-anim {
+            0% {
+                transform: translate(0)
+            }
+
+            20% {
+                transform: translate(-2px, 2px)
+            }
+
+            40% {
+                transform: translate(-2px, -2px)
+            }
+
+            60% {
+                transform: translate(2px, 2px)
+            }
+
+            80% {
+                transform: translate(2px, -2px)
+            }
+
+            100% {
+                transform: translate(0)
+            }
+        }
     </style>
 </head>
-<body class="antialiased">
 
-    <header class="shadow-lg">
-        <div class="header-container container mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
-            <div class="text-2xl font-bold animate-on-load logo-name">
-                <a href="#hero" class="block py-2">SATHWIK</a>
-            </div>
-            <nav id="main-nav" class="hidden md:flex items-center space-x-1">
-                <a href="#about" class="animate-on-load nav-link">About</a>
-                <a href="#skills" class="animate-on-load nav-link">Skills</a>
-                <a href="#tech-stack" class="animate-on-load nav-link">Tech</a>
-                <a href="#portfolio" class="animate-on-load nav-link">Portfolio</a>
-                <a href="#experience" class="animate-on-load nav-link">Experience</a>
-                <a href="#contact" class="animate-on-load nav-link">Contact</a>
-            </nav>
-            <div class="md:hidden flex items-center">
-                <button class="focus:outline-none p-2" id="mobile-menu-button" aria-label="Toggle menu" aria-expanded="false">
-                    <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </div>
-        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full shadow-xl">
-            <a href="#about" class="block text-base font-medium nav-link">About</a>
-            <a href="#skills" class="block text-base font-medium nav-link">Skills</a>
-            <a href="#tech-stack" class="block text-base font-medium nav-link">Tech</a>
-            <a href="#portfolio" class="block text-base font-medium nav-link">Portfolio</a>
-            <a href="#experience" class="block text-base font-medium nav-link">Experience</a>
-            <a href="#contact" class="block text-base font-medium nav-link">Contact</a>
-        </div>
-    </header>
+<body class="text-neo-black font-display antialiased selection:bg-neo-black selection:text-neo-yellow">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TLNG322R" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
-    <section id="hero" class="px-4 sm:px-6 lg:px-8">
-        <div id="particles-js"></div> <div class="hero-content-wrapper">
-            <h1 class="text-5xl sm:text-6xl md:text-7xl font-bold mb-6 animate-letters hero-title">
-                Hi, I'm SATHWIK
-            </h1>
-            <p class="text-xl sm:text-2xl md:text-3xl font-medium mb-10 animate-on-load hero-subtitle">
-               <!-- Innovative Technologist Focused on Data Science & Ai ML | Crafting Solutions in Data Handling, Backend, AI & Web Dev -->
-            </p>
-            <a href="#portfolio" class="font-bold py-4 px-10 rounded-full text-lg animate-on-load hero-cta">
-                Explore My Work
+    <div id="cursor" class="w-6 h-6 bg-white rounded-full border-2 border-black hidden lg:block"></div>
+
+    <div class="fixed top-0 left-0 h-2 bg-neo-green z-[60] border-b-2 border-black" id="progressBar" style="width: 0%">
+    </div>
+
+    <nav class="fixed top-0 w-full z-50 px-4 py-4 pointer-events-none">
+        <div class="max-w-7xl mx-auto flex justify-between items-center pointer-events-auto">
+            <a href="#"
+                class="bg-neo-white border-2 border-black px-4 py-1 text-2xl font-black shadow-hard hover:bg-neo-yellow transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none cursor-hover">
+                XAVY.exe
             </a>
-        </div>
-        <a href="#about" class="scroll-down-arrow" aria-label="Scroll down">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
-            </svg>
-        </a>
-    </section>
 
-    <hr class="section-divider">
-
-    <section id="about">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="section-title-container animate-on-scroll">
-                <h2 class="text-4xl font-bold section-title">About Me</h2>
-            </div>
-            <div class="text-center mb-12 animate-on-scroll" data-delay="50">
-                <p class="text-2xl font-semibold text-gray-300">Dedicated Technologist | Network & Security Enthusiast | Avid Coder</p>
-            </div>
-            <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16">
-                <div class="md:w-1/3 text-center animate-on-scroll about-image" data-delay="150">
-                    <img src="https://avatars.githubusercontent.com/u/197274423?v=4" alt="SHADOW - Professional Profile Picture" class="rounded-full mx-auto shadow-2xl w-56 h-56 md:w-72 md:h-72 object-cover border-4 border-gray-700 hover:border-gray-500 transition-colors duration-300" onerror="this.onerror=null; this.src='https://placehold.co/320x320/1a1a1a/eeeeee?text=Profile';">
-                </div>
-                <div class="md:w-2/3 animate-on-scroll about-text text-center md:text-left" data-delay="250">
-                    <p class="text-lg sm:text-xl leading-relaxed mb-5">
-                        Hello! I'm SHADOW, a dedicated and forward-thinking technology enthusiast currently advancing my studies with a Bachelor of Computer Applications (BCA) in the vibrant tech landscape of Mangaluru. My core passion lies in architecting elegant solutions at the confluence of networking, cybersecurity, artificial intelligence, and web development. I thrive on transforming complex challenges into intuitive and impactful digital experiences.
-                    </p>
-                    <p class="text-lg sm:text-xl leading-relaxed mb-5">
-                        My approach is rooted in continuous, hands-on learning and practical application. From developing comprehensive projects like the "CivicEye" platform to meticulously configuring my homelab environment and exploring cutting-edge programming paradigms, I am constantly seeking to expand my skill set. A recent deep-dive into "Advanced Web Security" at a specialized workshop has significantly sharpened my focus on building resilient and secure systems.
-                    </p>
-                    <p class="text-lg sm:text-xl leading-relaxed">
-                        I am eager to connect with fellow innovators, contribute to challenging projects, and leverage my skills to make a tangible difference. Let's build the future, together.
-                    </p>
-                </div>
+            <div class="hidden md:flex gap-4 bg-white border-2 border-black p-2 shadow-hard">
+                <a href="#about"
+                    class="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover">/ABOUT</a>
+                <a href="#skills"
+                    class="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover">/SKILLS</a>
+                <a href="#experience"
+                    class="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover">/LOGS</a>
+                <a href="#projects"
+                    class="px-3 py-1 font-mono font-bold text-sm hover:bg-black hover:text-white transition-colors cursor-hover">/PROJECTS</a>
+                <a href="#contact"
+                    class="px-3 py-1 font-mono font-bold text-sm bg-neo-yellow border border-black hover:bg-neo-pink transition-colors cursor-hover">HIRE
+                    ME</a>
             </div>
         </div>
+    </nav>
+
+    <section
+        class="min-h-screen flex flex-col justify-center items-center px-4 pt-20 relative overflow-hidden border-b-4 border-black">
+        <div
+            class="absolute top-1/3 left-[10%] w-16 h-16 bg-neo-blue border-4 border-black shadow-hard animate-bounce hidden lg:block rotate-12">
+        </div>
+        <div
+            class="absolute bottom-1/3 right-[10%] w-24 h-24 bg-neo-pink rounded-full border-4 border-black shadow-hard hidden lg:block animate-pulse">
+        </div>
+        <div class="absolute top-20 right-20 text-9xl opacity-5 font-black select-none pointer-events-none">CODE</div>
+
+        <div class="relative z-10 text-center max-w-5xl">
+            <div
+                class="inline-block bg-neo-white border-2 border-black px-4 py-1 mb-6 shadow-hard rotate-[-2deg] reveal">
+                <span class="font-mono font-bold text-neo-green bg-black px-2 mr-2">●</span>
+                <span class="font-mono font-bold">SYSTEM STATUS: ONLINE</span>
+            </div>
+
+            <h1
+                class="text-[13vw] md:text-[10vw] leading-[0.8] font-black uppercase tracking-tighter mb-6 reveal mix-blend-darken">
+                FULL STACK<br>
+                <span class="text-white text-stroke-black" style="-webkit-text-stroke: 3px black;">DEVELOPER</span>
+            </h1>
+
+            <p
+                class="font-mono text-lg md:text-2xl max-w-1xl mx-auto mb-10 bg-neo-yellow border-2 border-black p-6 shadow-hard reveal rotate-1">
+                I build digital products that refuse to be boring. <br>
+                <b>React • Python • Java • Node</b>
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center gap-6 reveal">
+                <a href="#projects"
+                    class="bg-black text-white border-2 border-black px-10 py-5 text-xl font-bold shadow-hard hover:bg-neo-green hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
+                    VIEW DATABASE
+                </a>
+                <a href="Assets/Resume/#" download
+                    class="bg-neo-white text-black border-2 border-black px-10 py-5 text-xl font-bold shadow-hard hover:bg-neo-pink hover:text-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-hover flex items-center justify-center gap-2">
+                    <i class="ri-download-line"></i> DOWNLOAD CV
+                </a>
+            </div>
+        </div>
     </section>
 
-    <hr class="section-divider">
-
-    <section id="skills">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="section-title-container animate-on-scroll">
-                <h2 class="text-4xl font-bold section-title">Core Competencies</h2>
+    <div class="border-b-4 border-black bg-neo-blue py-3 relative z-20">
+        <div class="marquee-container font-mono font-bold text-2xl text-white">
+            <div class="marquee-content">
+                /// OPEN FOR WORK /// FULL STACK DEVELOPMENT /// UI/UX DESIGN /// WEB3 READY /// ACCESSIBLE /// FAST ///
+                SECURE /// OPEN FOR WORK /// FULL STACK DEVELOPMENT ///
             </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">Network Engineering</h3>
-                    <p class="text-sm">Advanced Routing & Switching (OSPF, BGP), Network Security.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="70%"></div>
-                    </div>
+        </div>
+    </div>
+
+    <section id="about" class="py-24 px-4 max-w-7xl mx-auto border-x-4 border-black bg-white my-12 shadow-hard-lg">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+            <div class="md:col-span-4 reveal">
+                <div class="aspect-square bg-gray-200 border-4 border-black relative shadow-hard overflow-hidden group">
+                    <img src="Assets/images/pfp.jpg" alt="Sathwik"
+                        class="w-full h-full object-cover group-hover:grayscale-0 transition-all duration-500">
+                    <span
+                        class="absolute top-2 left-2 bg-neo-red text-white px-2 font-mono text-xs border border-black z-10">AVATAR.JPG</span>
                 </div>
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">Cybersecurity Practices</h3>
-                    <p class="text-sm">Ethical Hacking, Penetration Testing, Threat Analysis.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="65%"></div>
+            </div>
+            <div class="md:col-span-8 flex flex-col justify-center reveal">
+                <h2 class="text-6xl font-black uppercase mb-6">Who am I?</h2>
+                <p class="font-mono text-xl leading-relaxed mb-6">
+                    I am Sathwik. A creative developer who believes the web has become too sanitized. I bring <span
+                        class="bg-neo-yellow px-1 border border-black">personality</span> back to code.
+                </p>
+                <p class="font-mono text-lg mb-8 text-gray-600 border-l-4 border-neo-purple pl-4">
+                    > Full Stack Developer building AI-powered real-world solutions.<br>
+                    > Strong focus on MERN stack & AI/ML & system design.<br>
+                    > Turning ideas into scalable, production-ready solutions.
+                </p>
+
+                <div class="flex gap-4">
+                    <div class="bg-neo-black text-white px-4 py-2 font-mono text-sm border-2 border-transparent">
+                        📍 LOCATION: WORLDWIDE
                     </div>
-                </div>
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">Homelab & DevOps</h3>
-                    <p class="text-sm">Proxmox VE, TrueNAS, Linux Server Administration.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="75%"></div>
-                    </div>
-                </div>
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">AI & Machine Learning</h3>
-                    <p class="text-sm">Python (NumPy & Pandas), TensorFlow, PyTorch, Computer Vision Concepts.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="60%"></div>
-                    </div>
-                </div>
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">Advanced Python</h3>
-                    <p class="text-sm">Data Science Libraries, Automation & Scripting, API Integration.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="80%"></div>
-                    </div>
-                </div>
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">Strategic Problem Solving</h3>
-                    <p class="text-sm">Algorithmic Thinking, Debugging & Innovative Solution Design.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="90%"></div>
-                    </div>
-                </div>
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">Agile Project Management</h3>
-                    <p class="text-sm">Git/GitHub Flow, Effective Communication.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="85%"></div>
-                    </div>
-                </div>
-                <div class="p-6 rounded-lg shadow-xl animate-on-scroll skill-item card">
-                    <h3 class="text-xl font-semibold mb-3 text-gray-200">Full-Stack Web Development</h3>
-                    <p class="text-sm">HTML5, CSS3, JavaScript , PHP, RESTful APIs.</p>
-                    <div class="w-full skill-bar-bg rounded-full h-3 overflow-hidden mt-2">
-                        <div class="h-3 rounded-full skill-bar-fill" data-level="85%"></div>
+                    <div class="bg-neo-green text-black px-4 py-2 font-mono text-sm border-2 border-black">
+                        🟢 STATUS: AVAILABLE
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <hr class="section-divider">
+    <section id="skills" class="py-20 bg-neo-black text-neo-white border-y-4 border-black relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20"
+            style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
 
-    <section id="tech-stack">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="section-title-container animate-on-scroll">
-                <h2 class="text-4xl font-bold section-title">My Tech Arsenal</h2>
+        <div class="max-w-[1400px] mx-auto px-4 relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 border-b-4 border-white pb-4">
+                <h2 class="text-6xl md:text-8xl font-black uppercase text-white tracking-tighter">
+                    TECH<span class="text-neo-green">_STACK</span>
+                </h2>
+                <div class="flex items-center gap-2 mb-2 md:mb-4">
+                    <div class="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
+                    <p class="font-mono text-neo-green text-sm font-bold">/// SYSTEM_OPTIMIZED</p>
+                </div>
             </div>
-            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 tech-icon-grid">
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0 0 12 15.75a7.488 7.488 0 0 0-5.982 2.975m11.963 0a9 9 0 1 0-11.963 0m11.963 0A8.966 8.966 0 0 1 12 21a8.966 8.966 0 0 1-5.982-2.275M15 9.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" /></svg>
-                    <span>Linux & Bash</span>
+
+            <div class="flex flex-wrap justify-center md:justify-start">
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LIBRARY
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">REACT</div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 7.5V6.108c0-1.135.845-2.098 1.976-2.192.373-.03.748-.03 1.123 0 1.131.094 1.976 1.057 1.976 2.192V7.5M8.25 7.5h7.5M8.25 7.5V9a.75.75 0 0 1-.75.75H5.625a.75.75 0 0 1-.75-.75V7.5m0 0H3.75m0 0h-.375m9.75 0h.375M14.25 7.5V9a.75.75 0 0 0 .75.75h2.25a.75.75 0 0 0 .75-.75V7.5m0 0h2.25m0 0h.375m0 0A2.25 2.25 0 0 0 18.75 5.25v-1.5a2.25 2.25 0 0 0-2.25-2.25H7.5A2.25 2.25 0 0 0 5.25 3.75v1.5c0 .414.168.789.44 1.06M18.75 11.25l.381.762c.18.36.029.79-.324.97l-7.5 4.125a1.5 1.5 0 0 1-1.506 0l-7.5-4.125a.75.75 0 0 1-.324-.97l.381-.762A2.25 2.25 0 0 1 4.5 9.75h15c.803 0 1.5.484 1.875 1.125Z" /></svg>
-                    <span>Proxmox VE</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NEXT.JS
+                    </div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A11.978 11.978 0 0 1 12 16.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253M18.75 14.25a8.959 8.959 0 0 1-12.53 0v-3.75c0-.778.099-1.533.284-2.253M5.25 14.25A8.959 8.959 0 0 0 12 16.5c2.998 0 5.74-1.1 7.843-2.918m0 0c.286-.72.438-1.475.438-2.253 0-.778-.099-1.533-.284-2.253M12 10.5V12m-7.843-2.918C2.157 10.025 1.5 11.003 1.5 12c0 .778.099 1.533.284 2.253" /></svg>
-                    <span>Git & GitHub</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Python
+                    </div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0 0 12 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75Z" /></svg>
-                    <span>Docker</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ BACKEND
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">NODE.JS
+                    </div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
-                    </svg>
-                    <span>Network Security</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ STYLING
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">TAILWIND
+                    </div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5 3.75 12l3 4.5m10.5-9L20.25 12l-3 4.5m-8.25-3h6.75" />
-                    </svg>
-                    <span>Kali Linux</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ DATA</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">MySQL</div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-                    </svg>
-                    <span>Virtualization</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ CORE</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">HTML5</div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
-                    <span>HTML5</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ VERSION
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GIT</div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 0 0 6 3.75v16.5a2.25 2.25 0 0 0 2.25 2.25h7.5A2.25 2.25 0 0 0 18 20.25V3.75A2.25 2.25 0 0 0 15.75 1.5m-7.5 0P3.75 1.5M10.5 1.5a2.25 2.25 0 0 1 3 0m3 0h2.25m-10.5 6H9m7.5 0H15m-6.75 3H9m7.5 0H15m-6.75 3H9m7.5 0H15m-6.75 3H9m7.5 0H15" /></svg>
-                    <span>CSS3 & Tailwind</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ QUERY</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GRAPHQL
+                    </div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 10.5V6.75a4.5 4.5 0 1 0-9 0v3.75m-.75 11.25h10.5a2.25 2.25 0 0 0 2.25-2.25v-6.75a2.25 2.25 0 0 0-2.25-2.25H6.75a2.25 2.25 0 0 0-2.25 2.25v6.75a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
-                    <span>JavaScript (ESNext)</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-blue transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ OPS</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">GitHub
+                    </div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 256 256" fill="currentColor"><path d="M208.34,54.29l-80-32.18a11.86,11.86,0,0,0-10.68,0l-80,32.18A12,12,0,0,0,32,65.71V190.29a12,12,0,0,0,5.66,10.42l80,32.18a11.86,11.86,0,0,0,10.68,0l80-32.18a12,12,0,0,0,5.66-10.42V65.71A12,12,0,0,0,208.34,54.29ZM128,32l71.84,28.9L128,89.79,56.16,60.9ZM44,71.71l76,30.58v112l-76-30.58Zm168,118.58-76,30.58v-112l76-30.58Z"></path></svg>
-                    <span>Node.js</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-orange transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">JAVA</div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 0 0-3.375-3.375h-1.5A1.125 1.125 0 0 1 13.5 7.125v-1.5a3.375 3.375 0 0 0-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 0 0-9-9Z" /></svg>
-                    <span>Python</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-yellow transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">Django
+                    </div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
-                    <span>Flask/Django</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-pink transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">PHP</div>
                 </div>
-                <div class="tech-icon card">
-                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"></path></svg>
-                    <span>MySQL/PostgreSQL</span>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-white transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ FRAMEWORK
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">LARAVEL
+                    </div>
                 </div>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-green transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ 3D</div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">THREE.JS
+                    </div>
+                </div>
+
+                <div
+                    class="group w-1/2 sm:w-1/3 md:w-1/4 lg:w-1/6 xl:w-[12.5%] h-24 border-r-2 border-b-2 border-white/20 bg-neo-black hover:bg-neo-purple transition-all duration-0 hover:z-10 relative cursor-hover flex flex-col items-center justify-center p-2">
+                    <div class="text-neo-green group-hover:text-black font-mono text-xs mb-1 opacity-50">>_ LANGUAGE
+                    </div>
+                    <div class="text-white group-hover:text-black font-black font-display text-xl uppercase">C++</div>
+                </div>
+            </div>
+
+            <div class="border-t-4 border-white mt-8 pt-4 flex justify-between font-mono text-xs text-gray-500">
+                <span>TOTAL_NODES: 16</span>
+                <span>MEMORY_USAGE: 128MB</span>
             </div>
         </div>
     </section>
 
-    <hr class="section-divider">
+    <section id="experience" class="py-24 px-4 max-w-7xl mx-auto">
+        <h2 class="text-5xl md:text-8xl font-black uppercase mb-12 tracking-tighter text-center">
+            Achievement<span class="text-neo-red">_Log</span>
+        </h2>
 
-    <section id="portfolio">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="section-title-container animate-on-scroll">
-                <h2 class="text-4xl font-bold section-title">Featured Projects</h2>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <div class="rounded-lg overflow-hidden shadow-xl project-card card animate-on-scroll">
-                    <div class="project-thumbnail-container">
-                        <img src="https://placehold.co/600x400/1a1a1a/eeeeee?text=CivicEye+Platform" alt="CivicEye Web Platform Thumbnail" class="w-full h-52 object-cover">
-                        <div class="project-thumbnail-overlay">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 7.5l3 2.25-3 2.25m4.5 0h3m-9 8.25h13.5A2.25 2.25 0 0 0 21 18V6a2.25 2.25 0 0 0-2.25-2.25H5.25A2.25 2.25 0 0 0 3 6v12a2.25 2.25 0 0 0 2.25 2.25Z" /></svg>
-                        </div>
-                    </div>
-                    <div class="p-7 project-content">
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-100 project-title">CivicEye - Smart City Initiative</h3>
-                            <p class="text-sm project-summary mb-5">A comprehensive full-stack platform for intelligent civic issue detection and management, leveraging AI for real-time violation analysis. Built with Python (Flask), PHP, MySQL, and modern frontend frameworks.</p>
-                        </div>
-                        <a href="#" class="view-project-details project-details-link font-medium group mt-auto"
-                            data-title="CivicEye - Smart City Initiative"
-                            data-image="https://placehold.co/800x500/1a1a1a/eeeeee?text=CivicEye+Dashboard+Analytics"
-                            data-description="The CivicEye initiative encompasses a suite of tools designed for modern urban management. The server-side web platform (PHP/MySQL & Python/Flask APIs) offers robust user authentication, detailed detection logging, an administrative dashboard for moderation, and data analytics. The frontend utilizes HTML5, TailwindCSS, and JavaScript (React/Vue concepts) for a responsive and intuitive user experience. It integrates with the CivicEye Desktop application for seamless data flow. Key focuses include scalability, security, and real-time data processing for effective civic monitoring."
-                            data-live-link="https://example.com/project/civiceye-platform"
-                            data-code-link="https://github.com/shadow-dev-placeholder/civiceye-platform">
-                            View Details <span class="inline-block transform transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-xl project-card card animate-on-scroll" data-delay="100">
-                    <div class="project-thumbnail-container">
-                        <img src="https://placehold.co/600x400/1a1a1a/eeeeee?text=AI+Object+Detection" alt="CivicEye AI Detection Engine Thumbnail" class="w-full h-52 object-cover">
-                        <div class="project-thumbnail-overlay">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white"> <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 0 1-.879 2.122L7.5 21h9l-.621-.621A3 3 0 0 1 15 18.257V17.25m6-12V15a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 15V5.25A2.25 2.25 0 0 1 5.25 3h9.75a2.25 2.25 0 0 1 2.25 2.25Z" /> </svg>
-                        </div>
-                    </div>
-                    <div class="p-7 project-content">
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-100 project-title">CivicEye - AI Detection Engine</h3>
-                            <p class="text-sm project-summary mb-5">A Python-based desktop application featuring a fine-tuned YOLOv8 model for real-time object detection (e.g., helmet violations) from various video sources. Includes online/offline modes and performance tuning.</p>
-                        </div>
-                        <a href="#" class="view-project-details project-details-link font-medium group mt-auto"
-                            data-title="CivicEye - AI Detection Engine (Desktop)"
-                            data-image="https://placehold.co/800x500/1a1a1a/eeeeee?text=CivicEye+AI+Interface"
-                            data-description="The CivicEye Desktop Application serves as the core AI processing unit. Developed in Python with Tkinter/ttkbootstrap for the GUI, it integrates a custom-trained YOLOv8 model via Ultralytics and OpenCV for video stream analysis (local files, webcams, RTSP). Users can operate in online mode (syncing data with the CivicEye web platform via API) or offline mode (local data storage). Features include adjustable detection sensitivity (Fast, Balanced, Quality), light/dark themes, and robust error handling. This application showcases practical AI implementation for real-world problem-solving."
-                            data-live-link="#"
-                            data-code-link="https://github.com/shadow-dev-placeholder/civiceye-ai-engine">
-                            View Details <span class="inline-block transform transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-                <div class="rounded-lg overflow-hidden shadow-xl project-card card animate-on-scroll" data-delay="200">
-                    <div class="project-thumbnail-container">
-                        <img src="https://placehold.co/600x400/1a1a1a/eeeeee?text=Homelab+Infrastructure" alt="Homelab Infrastructure Thumbnail" class="w-full h-52 object-cover">
-                        <div class="project-thumbnail-overlay">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-10 h-10 text-white"><path stroke-linecap="round" stroke-linejoin="round" d="M5.25 14.25h13.5m-13.5 0a3 3 0 0 1-3-3V7.5a3 3 0 0 1 3-3h13.5a3 3 0 0 1 3 3v3.75a3 3 0 0 1-3 3M5.25 14.25v3.75a3 3 0 0 0 3 3h7.5a3 3 0 0 0 3-3v-3.75M5.25 14.25H3M18.75 14.25H21m-9.75 0h3.75" /></svg>
-                        </div>
-                    </div>
-                    <div class="p-7 project-content">
-                        <div>
-                            <h3 class="text-xl font-semibold mb-2 text-gray-100 project-title">Personal Homelab & Cloud</h3>
-                            <p class="text-sm project-summary mb-5">Self-hosted infrastructure using Proxmox VE, TrueNAS SCALE, Docker containers, and Ubuntu Server VMs. Securely exposed services via Cloudflare tunnels and Nginx Proxy Manager.</p>
-                        </div>
-                        <a href="#" class="view-project-details project-details-link font-medium group mt-auto"
-                            data-title="Homelab & Self-Hosted Cloud Infrastructure"
-                            data-image="https://placehold.co/800x500/1a1a1a/eeeeee?text=Proxmox+Dashboard+View"
-                            data-description="My personal homelab is a testament to my passion for systems administration and self-hosting. It runs on an Intel i5-4570T with 16GB RAM, virtualized with Proxmox VE. Key services include: TrueNAS SCALE for ZFS-based network storage and application hosting (Docker); multiple Ubuntu Server VMs for hosting web applications (like CivicEye LAMP stack), development environments, and experimental services. Network security is managed with UFW, and services are exposed securely to the internet using Cloudflare Tunnels and Nginx Proxy Manager for SSL termination and reverse proxying. This setup allows for continuous learning in DevOps, networking, and system resilience."
-                            data-live-link="#"
-                            data-code-link="#">
-                            Read More <span class="inline-block transform transition-transform duration-200 group-hover:translate-x-1.5">&rarr;</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="relative border-l-4 border-black ml-4 md:ml-10 space-y-12">
+<div class="reveal relative pl-8 md:pl-16 mt-10">
+    <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-red border-4 border-black"></div>=
+    <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+            <h3 class="text-3xl font-black uppercase">
+                Ideathon – Runner Up
+            </h3>
+            <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">
+                JAN 2026
+            </span>
+        </div>
+        <p class="font-mono text-xl mb-2 text-neo-red font-bold">
+            GOV-P29: Citizen Feedback & Grievance Tracker
+        </p>
+        <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
+            <li>Secured Runner-Up by building a citizen-first grievance tracking platform.</li>
+            <li>Designed real-time notifications, SLA timers, and transparency dashboards.</li>
+            <li>Developed role-based modules: Citizen App, Officer Dashboard, Public Portal.</li>
+            <li>Integrated AI features: NLP auto-tagging, GIS mapping, sentiment scoring.</li>
+            <li>Presented scalable architecture and defended technical feasibility.</li>
+        </ul>
+    </div>
+</div>
+
+
+            <div class="reveal relative pl-8 md:pl-16 mt-10">
+    <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-blue border-4 border-black"></div>
+    <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+            <h3 class="text-3xl font-black uppercase">
+                Hackathon – AgriTech Innovation
+            </h3>
+            <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">
+                JAN 2026
+            </span>
+        </div>
+        <p class="font-mono text-xl mb-2 text-neo-blue font-bold">
+            AI-Powered Real-Time Market Intelligence for Farmers
+        </p>
+        <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
+            <li>Designed an AI-enabled two-sided digital marketplace connecting farmers directly with buyers.</li>
+            <li>Developed a real-time market intelligence layer to predict fair prices using demand-supply analytics.</li>
+            <li>Proposed crop recommendation and yield prediction models to support data-driven farming decisions.</li>
+            <li>Built an optimized matching engine based on price, quantity, quality, and location parameters.</li>
+            <li>Presented a scalable, farmer-empowerment-focused architecture reducing middlemen dependency.</li>
+        </ul>
+    </div>
+</div>
+
+<div class="reveal relative pl-8 md:pl-16 mt-10">
+    <div class="absolute -left-[14px] top-2 w-6 h-6 bg-neo-purple border-4 border-black"></div>
+    <div class="bg-white border-4 border-black p-6 shadow-hard hover:shadow-hard-xl transition-all">
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center border-b-2 border-dashed border-gray-300 pb-4 mb-4">
+            <h3 class="text-3xl font-black uppercase">
+                UI/UX Design Internship – Sierra Learning Academy
+            </h3>
+            <span class="font-mono font-bold bg-neo-black text-white px-2 py-1">
+                FEB 2025 – MAY 2025
+            </span>
+        </div>
+        <p class="font-mono text-xl mb-2 text-neo-purple font-bold">
+            Framer-Based Website Design & Visual Communication
+        </p>
+        <ul class="list-disc list-inside font-mono text-gray-700 space-y-1">
+            <li>Completed a 4-month internship program focused on UI/UX design principles and user-centered design workflows.</li>
+            <li>Designed responsive websites using the Framer tool, emphasizing layout systems and interaction design.</li>
+            <li>Developed wireframes, prototypes, and structured visual hierarchies for modern web interfaces.</li>
+            <li>Created marketing posters and presentation assets following branding and visual consistency standards.</li>
+            <li>Presented website concepts professionally, explaining design rationale, usability, and user experience strategy.</li>
+        </ul>
+    </div>
+</div>
+
+
+
         </div>
     </section>
+    <!-- CODING STATS SECTION -->
+    <section id="coding-stats" class="py-12 bg-neo-black text-white border-y-4 border-black relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20"
+            style="background-image: linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px); background-size: 40px 40px;">
+        </div>
 
-    <hr class="section-divider">
-
-    <section id="experience">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="section-title-container animate-on-scroll">
-                <h2 class="text-4xl font-bold section-title">Journey & Milestones</h2>
+        <div class="max-w-7xl mx-auto px-4 relative z-10">
+            <!-- Compact Header -->
+            <div class="flex justify-between items-center mb-6 border-b-2 border-white pb-3">
+                <h2 class="text-4xl md:text-5xl font-black uppercase text-white tracking-tight">
+                    CODING<span class="text-neo-green">_STATS</span>
+                </h2>
+                <div class="flex items-center gap-2">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <p class="font-mono text-neo-green text-xs font-bold">LIVE</p>
+                </div>
             </div>
-            <div class="timeline-container">
-                <div class="timeline-svg-wrapper" aria-hidden="true">
-                    <svg width="100%" height="100%" viewBox="0 0 200 800" preserveAspectRatio="xMidYMin slice">
-                        <!-- Changed path to a straight line -->
-                        <path id="timeline-path"
-                              d="M 100 0 L 100 800"
-                              stroke="#444" stroke-width="3" fill="none" />
-                    </svg>
-                    <!-- Replaced div with an SVG for the F1 car marker -->
-                    <svg id="path-marker" width="24" height="48" viewBox="0 0 24 48" style="overflow: visible; position: absolute; opacity: 0; z-index: 2;">
-                        <!-- Group to center the car on the SVG's (0,0) origin, which will be moved by anime.js -->
-                        <g transform="translate(-12, -24)">
-                            <!-- The car drawing (centered around 12,24 in its own coordinate space) -->
-                            <!-- Main Body - light gray -->
-                            <path d="M12 0 L8 12 L6 14 L6 34 L8 36 L12 48 L16 36 L18 34 L18 14 L16 12 Z" fill="#e0e0e0"/>
-                            <!-- Front wing - dark gray -->
-                            <path d="M4 10 L20 10 L19 14 L5 14 Z" fill="#555555"/>
-                            <!-- Rear wing - dark gray -->
-                            <path d="M5 36 L19 36 L18 40 L6 40 Z" fill="#555555"/>
-                            <!-- Driver helmet - red -->
-                            <circle cx="12" cy="20" r="3" fill="#ff0000"/>
-                        </g>
-                    </svg>
-                </div>
 
-                <div class="timeline-item timeline-left">
-                    <div class="p-7 rounded-lg shadow-xl experience-item card timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-200">Intern & Trainee</h3>
-                        <p class="font-medium mb-1">Cybersapiens</p>
-                        <p class="text-sm mb-3">July 2025 - Present</p>
-                        <p class="text-sm">Focused on Web Application Management (WAM) and gaining hands-on experience in web development and operations.</p>
+            <!-- Two Column Layout: GitHub | LeetCode -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:auto-rows-fr">
+                <!-- GitHub Column -->
+                <div class="reveal flex flex-col h-full">
+                    <div class="flex items-center gap-2 mb-4 border-b border-white/20 pb-2">
+                        <div class="w-8 h-8 bg-neo-green border-2 border-white flex items-center justify-center">
+                            <i class="ri-github-fill text-lg text-black"></i>
+                        </div>
+                        <h3 class="text-2xl font-black uppercase text-white">GITHUB</h3>
                     </div>
-                </div>
-        
-                <div class="timeline-item timeline-right">
-                    <div class="p-7 rounded-lg shadow-xl experience-item card timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-200">Internship: UI/UX & Web Design</h3>
-                        <p class="font-medium mb-1">Sierra | Mangalore, India</p>
-                        <p class="text-sm mb-3">February 2025 - May 2025</p>
-                        <p class="text-sm">Contributed to web app design focusing on UI/UX, developed a design system, and created prototypes using Framer.</p>
-                    </div>
-                </div>
-        
-                <div class="timeline-item timeline-left">
-                    <div class="p-7 rounded-lg shadow-xl workshop-item card timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-200">Workshop: Ethical Hacking</h3>
-                        <p class="font-medium mb-1">Remarkskill | NITK Surathkal</p>
-                        <p class="text-sm mb-3">Completed: March 2025</p>
-                        <p class="text-sm mb-4 text-gray-300">
-                            Completed an intensive 2 day workshop covering a comprehensive range of offensive and defensive security techniques.
-                        </p>
-                        <div class="mt-4">
-                            <a href="#" class="btn-secondary text-sm inline-flex items-center view-certificate-button"
-                                data-certificate-title="Ethical Hacking Workshop Certificate & Topics Covered"
-                                data-certificate-image="https://placehold.co/800x600/1a1a1a/eeeeee?text=Ethical+Hacking+Certificate"
-                                data-certificate-details="<ul class='list-disc list-inside space-y-1.5 text-sm' style='text-align: left; padding-left: 20px;'><li>Introduction to Ethical Hacking: Concepts, Hacker Types (Black/White/Gray Hat), Red/Blue Teams.</li><li>Virtualization: VMware/VirtualBox setup &amp; configuration (Windows, Linux, macOS).</li><li>Linux Fundamentals: Kali Linux basics, commands, file system, editors (vi, vim, nano), permissions, package management, IP addressing, Netcat.</li><li>Networking Concepts: LAN/MAN/WAN, IP Addresses (Classes), MAC Addresses, CAM Tables, Routers, Switches, Hubs.</li><li>Security Infrastructure: IDS/IPS, Firewalls (Stateful/Stateless), Proxy Servers, Honeypots.</li><li>Information Gathering &amp; Scanning: Passive/Active reconnaissance, DNS, Google Dorking, Shodan, Port scanning (Nmap), Firewall bypass (Nmap, Hping3).</li><li>Wireless &amp; Network Attacks: Wi-Fi hacking, Packet Sniffing, Man-in-the-Middle (MITM) attacks.</li><li>Malware Threats: Malware types, Virus/Spyware creation concepts.</li><li>Denial of Service: DoS/DDoS concepts, attack types, and performance.</li><li>Social Engineering: Techniques and information gathering.</li><li>Web Server Hacking: Vulnerability discovery (Nmap Scripting Engine, Metasploit), Directory Traversal, Log Cracking, Backdoors, FTP exploitation.</li><li>Web Application Hacking: OWASP Top 10, SQL Injection (Manual &amp; SQLMap), Cross-Site Scripting (XSS types &amp; attacks).</li><li>Mobile Platform Hacking: Android platform, Payload creation &amp; deployment (BeEF, MITM, Social Engineering).</li><li>Steganography: Concepts, case studies, and usage.</li><li>Cryptography: Fundamentals, communication security, encryption types.</li></ul>">
-                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25M9 12l2.25 2.25L15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                View Certification
+
+                    <!-- GitHub Block -->
+                    <div
+                        class="border-4 border-white/20 p-6 bg-black flex-1 flex flex-col shadow-[8px_8px_0_rgba(0,0,0,1)] relative group">
+                        <!-- Profile Header -->
+                        <div class="flex items-center justify-between mb-8 pb-4 border-b border-white/10">
+                            <div class="flex items-center gap-3">
+                                <i class="ri-github-fill text-3xl text-neo-green"></i>
+                                <div>
+                                    <h4 class="text-xl font-black text-white leading-tight">Sathwik656</h4>
+                                    <p class="text-[10px] font-mono text-neo-green uppercase tracking-widest">Midnight
+                                        Coder</p>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div id="total-contributions"
+                                    class="text-2xl font-black text-neo-green tracking-tighter">--</div>
+                                <p class="text-[8px] font-mono text-gray-500 uppercase">Commits</p>
+                            </div>
+                        </div>
+
+                        <!-- Simplified Stats Grid (2x2) -->
+                        <div class="grid grid-cols-2 gap-4 mb-8 uppercase">
+                            <div
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                <div
+                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    Repositories</div>
+                                <div id="repos-count" class="text-white font-black text-3xl tracking-tighter">--</div>
+                            </div>
+                            <div
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                <div
+                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    Followers</div>
+                                <div id="followers-count" class="text-white font-black text-3xl tracking-tighter">--
+                                </div>
+                            </div>
+                            <div
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                <div
+                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    Commits</div>
+                                <div id="total-contributions-grid"
+                                    class="text-white font-black text-3xl tracking-tighter">--</div>
+                            </div>
+                            <div
+                                class="border-2 border-neo-green/30 bg-neo-black/60 p-4 relative group overflow-hidden hover:border-neo-green transition-colors shadow-[4px_4px_0_rgba(51,255,87,0.1)]">
+                                <div
+                                    class="text-[9px] font-mono text-neo-green mb-1 uppercase tracking-widest opacity-70">
+                                    Joined</div>
+                                <div id="created-at"
+                                    class="text-white font-black text-xl tracking-tighter mt-1 leading-none">--</div>
+                            </div>
+                        </div>
+
+<!-- Activity Graph parallel to LeetCode Heatmap -->
+<div class="flex-1 flex flex-col justify-center mb-8">
+    <div
+        class="bg-black border-2 border-neo-green/30 p-2 overflow-hidden shadow-[4px_4px_0_rgba(51,255,87,0.1)] group hover:border-neo-green transition-colors duration-500 relative">
+
+        <!-- NeoBrutalist accent dot -->
+        <div class="absolute top-1 right-1 w-1.5 h-1.5 bg-neo-green rounded-full animate-pulse"></div>
+
+        <!-- Label -->
+        <p class="text-[8px] font-mono text-neo-green/50 uppercase tracking-[0.2em] mb-1">
+            Matrix_Output
+        </p>
+
+        <!-- GitHub Activity Graph -->
+        <img 
+            src="https://github-readme-activity-graph.vercel.app/graph?username=Sathwik656&bg_color=000000&color=33FF57&line=33FF57&point=ffffff&area=true&hide_border=true"
+            alt="GitHub Activity Graph"
+            class="w-full h-auto filter brightness-110 contrast-110 transition-transform duration-500 group-hover:scale-[1.02]"
+            style="image-rendering: auto;" 
+        />
+    </div>
+</div>
+
+
+                        <!-- Command Line Footer -->
+                        <div
+                            class="mt-auto flex items-center justify-between text-neo-green p-3 border-2 border-white/10 bg-neo-black font-mono text-[11px]">
+                            <div class="flex items-center gap-2">
+                                <span class="text-white/30">$</span>
+                                <span class="text-neo-green">gh --stats</span>
+                                <span class="animate-pulse">_</span>
+                            </div>
+                            <a href="https://github.com/Sathwik656" target="_blank"
+                                class="text-neo-green px-3 py-1 font-black uppercase border border-neo-green hover:bg-neo-green hover:text-black transition-all">
+                                VIEW_GH →
                             </a>
                         </div>
                     </div>
                 </div>
-        
-                <div class="timeline-item timeline-right">
-                    <div class="p-7 rounded-lg shadow-xl experience-item card timeline-content">
-                        <h3 class="text-xl font-semibold text-gray-200">Bachelor of Computer Applications (BCA)</h3>
-                        <p class="font-medium mb-1">Mangalore Academy of Professional Studies</p>
-                        <p class="text-sm mb-3">2022 - Expected Graduation: June 2025</p>
-                         <p class="text-sm">Specializing in Cloud Computing, AI, and Data Analytics with key coursework in Data Structures & Algorithms.</p>
+
+    <div class="reveal flex flex-col h-full delay-100">
+        <div class="flex items-center gap-2 mb-4 border-b border-white/20 pb-2">
+            <div class="w-8 h-8 bg-neo-green border-2 border-white flex items-center justify-center">
+                <i class="ri-code-s-slash-line text-lg text-black"></i>
+            </div>
+            <h3 class="text-2xl font-black uppercase text-white">SYSTEM_LOGS</h3>
+        </div>
+
+        <div class="border-4 border-white/20 p-6 bg-black flex-1 flex flex-col shadow-[8px_8px_0_rgba(0,0,0,1)] relative">
+            
+            <div class="flex items-center justify-between mb-4">
+                <p class="text-[10px] font-mono text-neo-green uppercase tracking-widest flex items-center gap-2">
+                    <span class="w-2 h-2 bg-neo-green animate-pulse"></span>
+                    Recent_Deployments
+                </p>
+                <span class="text-[9px] text-gray-500 font-mono">FETCHING_DATA...</span>
+            </div>
+
+            <div id="gh-projects-list" class="flex flex-col gap-3 mb-8">
+                <div class="p-4 border border-white/10 bg-white/5 animate-pulse">
+                     <div class="h-4 bg-white/10 w-2/3 mb-2"></div>
+                     <div class="h-2 bg-white/10 w-full mb-1"></div>
+                     <div class="h-2 bg-white/10 w-1/2"></div>
+                </div>
+            </div>
+
+            <div class="mt-auto">
+                <div class="flex items-center justify-between mb-4 border-t border-white/10 pt-4">
+                    <p class="text-[10px] font-mono text-neo-green uppercase tracking-widest">
+                        Detected_Stack
+                    </p>
+                    <span class="text-[9px] text-gray-500 font-mono">CPU_USAGE_OPTIMIZED</span>
+                </div>
+
+                <div id="gh-languages-list" class="space-y-3 font-mono text-xs">
+                    </div>
+            </div>
+
+            <div class="mt-6 flex items-center gap-2 text-gray-500 p-2 bg-black border border-white/5 font-mono text-[10px]">
+                <span class="text-neo-green">root@server:~#</span>
+                <span>./fetch_latest_repos.sh</span>
+            </div>
+        </div>
+    </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 bg-neo-yellow border-t-4 border-black px-4 overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-6xl md:text-9xl font-black mb-16 uppercase tracking-tighter text-white drop-shadow-[4px_4px_0_rgba(0,0,0,1)] text-stroke-black"
+                style="-webkit-text-stroke: 3px black;">
+                PROJECTS
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
+                    <div
+                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                        <img src="Assets/images/ai.png"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-purple transition-colors glitch-hover">
+                                Ai Learning Assistant</h3>
+                            <p class="font-mono text-sm mb-4 max-w-xs">An AI-powered document learning platform enabling uploads, smart summaries, quizzes, and interactive chatbot support.</p>
+                            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                                <span class="bg-neo-black text-white px-2 py-1">React</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Next.js</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Expres.js</span>
+                                <span class="bg-neo-black text-white px-2 py-1">MongoDB</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Gemini API</span>
+                            </div>
+                        </div>
+                        <a href="https://mern-ai-assistant-frontend.onrender.com/login"
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            <i class="ri-arrow-right-up-line text-2xl"></i>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard mt-0 md:mt-20">
+                    <div
+                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                        <img src="Assets//images/cancer.png"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <h3
+                                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-blue transition-colors glitch-hover">
+                                Cancer Predictor</h3>
+                            <p class="font-mono text-sm mb-4 max-w-xs">A Streamlit web application using scikit-learn models to predict cancer risk from clinical data.</p>
+                            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                                <span class="bg-neo-black text-white px-2 py-1">Streamlit</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Scikit-learn</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Pandas</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Numpy</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Matplotlib</span>
+                            </div>
+                        </div>
+                        <a href="https://app-cancer-predict-xavy.streamlit.app/"
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            <i class="ri-arrow-right-up-line text-2xl"></i>
+                        </a>
+                    </div>
+                </article>
+
+<article class="reveal group bg-white border-4 border-black p-4 shadow-hard">
+    <div
+        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+        <img src="Assets/images/sub.png"
+            alt="Subscription Tracker - Full Stack Expense & Subscription Management App by Sathwik"
+            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+    </div>
+    <div class="flex justify-between items-start">
+        <div>
+            <h3
+                class="text-4xl font-black uppercase mb-2 group-hover:text-neo-pink transition-colors glitch-hover">
+                Subscription Tracker</h3>
+
+            <p class="font-mono text-sm mb-4 max-w-xs">
+                Full Stack web application to track, manage and analyze recurring subscriptions with 
+                real-time cost insights and structured expense monitoring.
+            </p>
+
+            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                <span class="bg-neo-black text-white px-2 py-1">React</span>
+                <span class="bg-neo-black text-white px-2 py-1">Next.js</span>
+                <span class="bg-neo-black text-white px-2 py-1">Express</span>
+                <span class="bg-neo-black text-white px-2 py-1">Firebase</span>
+                <span class="bg-neo-black text-white px-2 py-1">JWT Auth</span>
+            </div>
+        </div>
+
+        <a href="https://github.com/Sathwik656/Subscription-tracker"
+            target="_blank"
+            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+            <i class="ri-arrow-right-up-line text-2xl"></i>
+        </a>
+    </div>
+</article>
+
+
+                <article class="reveal group bg-white border-4 border-black p-4 shadow-hard mt-0 md:mt-20">
+                    <div
+                        class="bg-black border-2 border-black aspect-video relative overflow-hidden mb-6 group-hover:shadow-none transition-all">
+                        <img src="Assets/images/civ.png"
+                            alt="Professional Portfolio V1 - Full Stack Developer Portfolio with 3D Animations by Arham"
+                            class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity">
+                    </div>
+                    <div class="flex justify-between items-start">
+                        <div>
+                            <a href="https://arham43-ops.netlify.app">
+                                <h3
+                                    class="text-4xl font-black uppercase mb-2 group-hover:text-neo-orange transition-colors glitch-hover">
+                                    Portfolio V1</h3>
+                            </a>
+                            <p class="font-mono text-sm mb-4 max-w-xs">Portfolio made Using React, node and three.js.
+                                Fully Responsive and 3d animated components.</p>
+                            <div class="flex gap-2 font-mono text-xs font-bold flex-wrap">
+                                <span class="bg-neo-black text-white px-2 py-1">REACT</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Node.js</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Three.js</span>
+                                <span class="bg-neo-black text-white px-2 py-1">3D</span>
+                                <span class="bg-neo-black text-white px-2 py-1">Animated</span>
+                            </div>
+                        </div>
+                        <a href="arham43-ops.netlify.app"
+                            class="w-12 h-12 border-2 border-black bg-neo-green flex items-center justify-center hover:bg-black hover:text-white transition-all cursor-hover shadow-hard-sm">
+                            <i class="ri-arrow-right-up-line text-2xl"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="text-center mt-24">
+                <a href="https://github.com/Sathwik656?tab=repositories"
+                    class="inline-block bg-neo-black text-white px-12 py-5 font-bold font-mono text-xl hover:bg-neo-white hover:text-black border-4 border-black transition-all shadow-hard hover:shadow-none cursor-hover">
+                    VIEW ALL REPOS ON GITHUB
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="certifications" class="py-24 bg-neo-black border-t-4 border-black overflow-hidden relative">
+    <div class="max-w-7xl mx-auto px-4">
+        <div
+            class="flex items-center gap-2 mb-16 bg-white/5 border-2 border-white/10 p-4 inline-flex shadow-hard shadow-neo-blue/20">
+            <div class="flex gap-2">
+                <div class="h-3 w-3 bg-red-500 rounded-full border border-black"></div>
+                <div class="h-3 w-3 bg-yellow-500 rounded-full border border-black"></div>
+                <div class="h-3 w-3 bg-green-500 rounded-full border border-black"></div>
+            </div>
+            <h2 class="font-mono text-white text-xl font-bold ml-4 tracking-tighter">CERTIFICATIONS.txt</h2>
+            <div class="ml-8 px-2 bg-neo-green text-black text-[10px] font-black uppercase">VERIFIED</div>
+        </div>
+    </div>
+
+    <div class="marquee-container group cursor-hover">
+        <div class="marquee-content flex gap-8 py-12 px-4 select-none">
+
+            <!-- Certification Card 1 -->
+            <a href="Assets/certificates/certificate1.pdf" target="_blank"
+                class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
+                hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 
+                relative overflow-hidden text-left whitespace-normal">
+
+                <div class="absolute top-0 left-0 w-full h-1 bg-neo-green"></div>
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+
+                <div class="flex justify-between items-start mb-6">
+                    <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">
+                        CERT_001.pdf
+                    </div>
+                    <div class="text-[10px] font-mono text-gray-500">2025</div>
+                </div>
+
+                <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
+                    ISSUED BY: Organization Name
+                </div>
+
+                <p class="font-bold text-xl leading-snug mb-6 text-white/90">
+                    Full Stack Web Development Certification
+                </p>
+
+                <div class="font-mono text-neo-green text-xs uppercase tracking-widest">
+                    Click to View Certificate →
+                </div>
+            </a>
+
+
+            <!-- Certification Card 2 -->
+            <a href="Assets/certificates/certificate2.pdf" target="_blank"
+                class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
+                hover:border-neo-blue/50 hover:-translate-y-2 transition-all duration-500 
+                relative overflow-hidden text-left whitespace-normal">
+
+                <div class="absolute top-0 left-0 w-full h-1 bg-neo-blue"></div>
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+
+                <div class="flex justify-between items-start mb-6">
+                    <div class="font-mono text-neo-blue text-xs font-bold tracking-widest uppercase">
+                        CERT_002.pdf
+                    </div>
+                    <div class="text-[10px] font-mono text-gray-500">2025</div>
+                </div>
+
+                <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
+                    ISSUED BY: Organization Name
+                </div>
+
+                <p class="font-bold text-xl leading-snug mb-6 text-white/90">
+                    UI/UX Design & Framer Certification
+                </p>
+
+                <div class="font-mono text-neo-blue text-xs uppercase tracking-widest">
+                    Click to View Certificate →
+                </div>
+            </a>
+
+
+            <!-- Certification Card 3 -->
+            <a href="Assets/certificates/certificate3.pdf" target="_blank"
+                class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
+                hover:border-neo-pink/50 hover:-translate-y-2 transition-all duration-500 
+                relative overflow-hidden text-left whitespace-normal">
+
+                <div class="absolute top-0 left-0 w-full h-1 bg-neo-pink"></div>
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+
+                <div class="flex justify-between items-start mb-6">
+                    <div class="font-mono text-neo-pink text-xs font-bold tracking-widest uppercase">
+                        CERT_003.pdf
+                    </div>
+                    <div class="text-[10px] font-mono text-gray-500">2024</div>
+                </div>
+
+                <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
+                    ISSUED BY: Organization Name
+                </div>
+
+                <p class="font-bold text-xl leading-snug mb-6 text-white/90">
+                    AI & Machine Learning Fundamentals
+                </p>
+
+                <div class="font-mono text-neo-pink text-xs uppercase tracking-widest">
+                    Click to View Certificate →
+                </div>
+            </a>
+
+
+            <!-- Duplicate Set for Infinite Scroll -->
+            <!-- Just copy same 3 again for seamless marquee -->
+
+            <a href="Assets/certificates/certificate1.pdf" target="_blank"
+                class="flex-shrink-0 w-[450px] bg-neo-black border-4 border-white/10 p-8 shadow-hard 
+                hover:border-neo-green/50 hover:-translate-y-2 transition-all duration-500 
+                relative overflow-hidden text-left whitespace-normal">
+
+                <div class="absolute top-0 left-0 w-full h-1 bg-neo-green"></div>
+                <div class="absolute -top-4 -right-4 w-12 h-12 bg-white/5 rotate-45"></div>
+
+                <div class="flex justify-between items-start mb-6">
+                    <div class="font-mono text-neo-green text-xs font-bold tracking-widest uppercase">
+                        CERT_001.pdf
+                    </div>
+                    <div class="text-[10px] font-mono text-gray-500">2025</div>
+                </div>
+
+                <div class="font-mono text-gray-400 text-[10px] mb-2 uppercase tracking-tight">
+                    ISSUED BY: Organization Name
+                </div>
+
+                <p class="font-bold text-xl leading-snug mb-6 text-white/90">
+                    Full Stack Web Development Certification
+                </p>
+
+                <div class="font-mono text-neo-green text-xs uppercase tracking-widest">
+                    Click to View Certificate →
+                </div>
+            </a>
+
+        </div>
+    </div>
+</section>
+
+
+
+
+    <section id="contact" class="py-24 px-4 max-w-5xl mx-auto">
+        <div class="bg-white border-4 border-black shadow-hard-xl p-8 md:p-12 relative reveal mt-12">
+            <div
+                class="absolute -top-10 -left-6 bg-neo-yellow border-4 border-black px-6 py-2 shadow-hard rotate-[-5deg]">
+                <span class="font-black text-2xl">START A PROJECT</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-6xl font-black uppercase mb-6 leading-[0.85]">Let's<br>Talk<br>Code.</h2>
+                    <p class="font-mono text-lg mb-8 text-gray-600">
+                        I am currently available for freelance work and open to full-time opportunities.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
+                                <i class="ri-mail-line text-xl"></i>
+                            </div>
+                            <a href="mailto:sathwik677@gmail.com"
+                                class="text-xl font-bold hover:bg-neo-blue cursor-hover">sathwik677@gmail.com</a>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 bg-neo-black text-white flex items-center justify-center border-2 border-black">
+                                <i class="ri-map-pin-line text-xl"></i>
+                            </div>
+                            <span class="text-xl font-bold">Remote / Earth</span>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="text-center mt-12 animate-on-scroll" data-delay="300">
-                <a href="https://example.com/path-to/SHADOW_Resume_2025.pdf" target="_blank" class="btn-primary btn-outline-gray text-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block mr-2"> <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /> </svg>
-                    Download Full Resume
-                </a>
+
+                <form class="space-y-6 bg-gray-50 p-6 border-2 border-black">
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Identity</label>
+                        <input type="text" placeholder="NAME / COMPANY"
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Coordinates</label>
+                        <input type="email" placeholder="EMAIL ADDRESS"
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all cursor-hover">
+                    </div>
+                    <div class="flex flex-col">
+                        <label class="font-mono font-bold mb-1 uppercase text-xs">Transmission</label>
+                        <textarea rows="4" placeholder="PROJECT DETAILS..."
+                            class="bg-white border-2 border-black p-3 font-bold focus:outline-none focus:bg-neo-yellow focus:shadow-hard-sm transition-all resize-none cursor-hover"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-neo-blue text-white font-black text-xl py-4 border-2 border-black shadow-hard neo-button hover:bg-neo-black hover:translate-y-1 hover:shadow-none transition-all cursor-hover">
+                        TRANSMIT DATA
+                    </button>
+                </form>
             </div>
         </div>
     </section>
 
-    <hr class="section-divider">
-
-    <section id="contact">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="section-title-container animate-on-scroll">
-                <h2 class="text-4xl font-bold section-title">Let's Innovate Together</h2>
+    <footer class="bg-black text-white py-16 px-4 border-t-8 border-neo-green font-mono relative overflow-hidden">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
+            <div class="col-span-1 md:col-span-2">
+                <h2 class="text-4xl font-black mb-6">SATHWIK.</h2>
+                <p class="text-gray-400 max-w-sm">
+                    Designing for the future with the raw aesthetics of the past. No cookies, no trackers, just code.
+                </p>
             </div>
-            <p class="text-center text-lg text-gray-400 mb-14 max-w-2xl mx-auto animate-on-scroll">
-                I'm actively seeking challenging internships and collaborative projects where I can contribute my expertise in web development, networking, AI, or cybersecurity. If you're looking for a dedicated technologist with a drive for innovation, or simply want to connect, I'd love to hear from you!
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center items-center space-y-6 sm:space-y-0 sm:space-x-8 animate-on-scroll contact-links" data-delay="100">
-                <a href="mailto:shadow.dev.contact@example.com" class="btn-primary text-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" /></svg>
-                    Email Me
-                </a>
-                <div class="flex space-x-6">
-                    <a href="https://linkedin.com/in/shadow-technologist-placeholder" target="_blank" class="inline-block text-gray-500 hover:text-gray-300 transition duration-300 transform hover:scale-110 p-2 rounded-full hover:bg-gray-700/50" title="LinkedIn Profile" aria-label="LinkedIn Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-                    </a>
-                    <a href="https://github.com/shadow-dev-placeholder" target="_blank" class="inline-block text-gray-500 hover:text-gray-300 transition duration-300 transform hover:scale-110 p-2 rounded-full hover:bg-gray-700/50" title="GitHub Profile" aria-label="GitHub Profile">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-                    </a>
+
+            <div>
+                <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2">SITEMAP</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="#"
+                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Home</a>
+                    </li>
+                    <li><a href="#projects"
+                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Works</a>
+                    </li>
+                    <li><a href="#about"
+                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">About</a>
+                    </li>
+                    <li><a href="#contact"
+                            class="hover:text-white hover:underline decoration-neo-pink decoration-2 cursor-hover">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h3 class="font-bold text-neo-green mb-4 border-b border-gray-700 pb-2">SOCIALS</h3>
+                <div class="flex gap-4">
+                    <a href="https://leetcode.com/u/arham43-ops/"
+                        class="text-2xl hover:text-neo-blue transition-colors cursor-hover"><i
+                            class="ri-code-fill"></i></a>
+                    <a href="https://www.instagram.com/ofc.not_arham"
+                        class="text-2xl hover:text-neo-pink transition-colors cursor-hover"><i
+                            class="ri-instagram-fill"></i></a>
+                    <a href="https://github.com/Arham43-ops"
+                        class="text-2xl hover:text-neo-yellow transition-colors cursor-hover"><i
+                            class="ri-github-fill"></i></a>
+                    <a href="https://www.linkedin.com/in/arham43-ops/"
+                        class="text-2xl hover:text-neo-purple transition-colors cursor-hover"><i
+                            class="ri-linkedin-fill"></i></a>
                 </div>
             </div>
         </div>
-    </section>
 
-    <footer>
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <p style="text-align:center; font-size: 0.9rem; color: #aaa;">&copy; <span id="current-year"></span> SHADOW. Designed & Built with Passion.</p>
+        <div class="text-center mt-16 pt-8 border-t border-gray-800 text-gray-500 text-sm">
+            <p>© 2025 XAVY.exe // SYSTEM_END</p>
+        </div>
+
+        <div
+            class="absolute bottom-0 left-0 w-full text-[20vw] font-black text-white opacity-[0.03] leading-none select-none pointer-events-none text-center">
+            BRUTAL
         </div>
     </footer>
 
-    <div id="project-modal-overlay" class="modal-overlay">
-        <div id="project-modal-content" class="modal-content">
-            <button id="modal-close-button" class="modal-close-btn" aria-label="Close modal">&times;</button>
-            <img id="modal-project-image" src="https://placehold.co/800x500/1a1a1a/eeeeee?text=Project+Image" alt="Project Image" class="mb-4">
-            <h3 id="modal-project-title" class="text-2xl font-bold mb-2">Project Title</h3>
-            <div class="flex justify-between items-center mb-4">
-                 <p id="modal-project-description" class="text-base leading-relaxed flex-grow">Detailed project description goes here.</p>
-                 <button id="enhance-description-btn" class="btn-secondary text-sm ml-4 flex-shrink-0">✨ Enhance with AI</button>
-            </div>
-            <div id="description-loader" class="hidden text-center text-gray-400 my-2">Enhancing...</div>
-            <div class="modal-project-links">
-                <a href="#" id="modal-live-site-link" target="_blank" class="btn-primary text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" /></svg>
-                    View Live Site
-                </a>
-                <a href="#" id="modal-source-code-link" target="_blank" class="btn-secondary text-sm">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17.25 6.75 22.5 12l-5.25 5.25m-10.5 0L1.5 12l5.25-5.25m7.5-3-4.5 16.5" /></svg>
-                    View Source Code
-                </a>
-            </div>
-        </div>
-    </div>
-
-    <button id="ai-assistant-fab" title="Ask My AI Assistant">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-        </svg>
-    </button>
-
-    <div id="ai-chat-modal-overlay" class="modal-overlay">
-        <div id="ai-chat-modal-content" class="modal-content">
-            <button id="ai-chat-modal-close-button" class="modal-close-btn" aria-label="Close modal">&times;</button>
-            <div id="ai-chat-messages">
-                </div>
-            <div id="ai-chat-input-container">
-                <input type="text" id="ai-chat-input" placeholder="Ask about my skills, projects, etc.">
-                <button id="ai-chat-send-btn">Send</button>
-            </div>
-        </div>
-    </div>
-
-
     <script>
-        // --- Mobile Menu Toggle ---
-        const menuButton = document.getElementById('mobile-menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const siteBody = document.body;
+        // Custom Cursor Logic
+        const cursor = document.getElementById('cursor');
+        const hoverElements = document.querySelectorAll('.cursor-hover, a, button, input, textarea');
 
-        if (menuButton && mobileMenu) {
-            menuButton.addEventListener('click', () => {
-                const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
-                menuButton.setAttribute('aria-expanded', !isExpanded);
-                mobileMenu.classList.toggle('hidden');
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+            cursor.style.transform = `translate(-50%, -50%)`;
+        });
+
+        // Add hover effect to cursor
+        hoverElements.forEach(el => {
+            el.addEventListener('mouseenter', () => {
+                cursor.style.width = '60px';
+                cursor.style.height = '60px';
+                cursor.style.backgroundColor = '#FBFF48'; // Neo Yellow
+                cursor.style.mixBlendMode = 'normal';
+                cursor.style.border = '2px solid black';
             });
-
-            mobileMenu.querySelectorAll('a.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    menuButton.setAttribute('aria-expanded', 'false');
-                    mobileMenu.classList.add('hidden');
-                });
+            el.addEventListener('mouseleave', () => {
+                cursor.style.width = '24px';
+                cursor.style.height = '24px';
+                cursor.style.backgroundColor = '#fff';
+                cursor.style.mixBlendMode = 'difference';
+                cursor.style.border = 'none';
             });
-        }
+        });
 
-        // --- Smooth Scrolling & Nav Highlighting (Scroll Spy) ---
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('#main-nav a.nav-link, #mobile-menu a.nav-link');
-        const headerOffset = 70;
+        // GitHub API Integration
+async function fetchGitHubStats() {
+    const username = 'Sathwik656';
+    const apiUrl = `https://api.github.com/users/${username}`;
+    const reposUrl = `https://api.github.com/users/${username}/repos?sort=updated&per_page=10`;
 
-        const activateNavLink = (linkToActivate) => {
-            navLinks.forEach(nav => nav.classList.remove('active'));
-            if (linkToActivate) {
-                const href = linkToActivate.getAttribute('href');
-                const mainNavLink = document.querySelector(`#main-nav a[href="${href}"]`);
-                if (mainNavLink) mainNavLink.classList.add('active');
-                
-                const mobileNavLink = document.querySelector(`#mobile-menu a[href="${href}"]`);
-                if (mobileNavLink) mobileNavLink.classList.add('active');
-            }
-        };
+    // 1. Fetch Basic Profile Stats (Left Column)
+    try {
+        const response = await fetch(apiUrl);
+        if (!response.ok) throw new Error(`Profile error! status: ${response.status}`);
+        const data = await response.json();
+
+        // Update basic counts
+        const reposEl = document.getElementById('repos-count');
+        const followersEl = document.getElementById('followers-count');
         
-        let scrollTimeout;
-        const onScroll = () => {
-            clearTimeout(scrollTimeout);
-            scrollTimeout = setTimeout(() => {
-                const scrollY = window.pageYOffset;
-                let currentSectionId = null;
+        if(reposEl) reposEl.textContent = data.public_repos || '0';
+        if(followersEl) followersEl.textContent = data.followers || '0';
 
-                sections.forEach(section => {
-                    const sectionTop = section.offsetTop - headerOffset - 1;
-                    const sectionHeight = section.offsetHeight;
-                    const sectionId = section.getAttribute('id');
+        // Format Date
+        if (data.created_at) {
+            const date = new Date(data.created_at);
+            const formattedDate = date.toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short'
+            });
+            const joinedEl = document.getElementById('created-at');
+            if(joinedEl) joinedEl.textContent = formattedDate;
+        }
 
-                    if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
-                        currentSectionId = sectionId;
-                    }
-                });
+        // Approx Commits Logic
+        const contribValue = `${(data.public_repos * 20) + (data.followers * 5)}+`;
+        const contribHeader = document.getElementById('total-contributions');
+        const contribGrid = document.getElementById('total-contributions-grid');
+        if (contribHeader) contribHeader.textContent = contribValue;
+        if (contribGrid) contribGrid.textContent = contribValue;
 
-                if ((window.innerHeight + scrollY) >= document.body.offsetHeight - 50) {
-                    currentSectionId = 'contact';
-                } else if (sections.length > 0 && scrollY < sections[0].offsetTop - headerOffset - 1 && currentSectionId !== 'hero') {
-                    if (scrollY < (document.getElementById('hero')?.offsetHeight || 0) / 2) {
-                        currentSectionId = 'hero';
-                    }
+    } catch (error) {
+        console.error('Error fetching Profile:', error);
+    }
+
+    // 2. Fetch Projects & Languages (Right Column)
+    try {
+        const repoResponse = await fetch(reposUrl);
+        if (!repoResponse.ok) throw new Error(`Repo error! status: ${repoResponse.status}`);
+        const repos = await repoResponse.json();
+
+        // --- RENDER RECENT PROJECTS ---
+        const projectContainer = document.getElementById('gh-projects-list');
+        if (projectContainer) {
+            projectContainer.innerHTML = ''; // Clear loading state
+            
+            // CHANGE THIS LINE: Change 3 to 4 to fill the gap
+            const topRepos = repos.slice(0, 4); 
+            
+            topRepos.forEach(repo => {
+                const langColor = getLanguageColor(repo.language);
+                
+                const html = `
+                    <a href="${repo.html_url}" target="_blank" class="group block border border-neo-green/30 bg-neo-black/40 hover:bg-neo-green/10 p-3 transition-all relative overflow-hidden">
+                        <div class="absolute inset-y-0 left-0 w-1 bg-neo-green/50 group-hover:bg-neo-green transition-colors"></div>
+                        <div class="flex justify-between items-start mb-1">
+                            <h5 class="font-bold text-white text-sm uppercase tracking-tight group-hover:text-neo-green transition-colors">
+                                ${repo.name}
+                            </h5>
+                            <div class="flex items-center gap-1 text-[10px] text-neo-green bg-neo-green/10 px-1.5 py-0.5 border border-neo-green/20">
+                                <i class="ri-star-fill"></i> ${repo.stargazers_count}
+                            </div>
+                        </div>
+                        <p class="text-gray-400 text-[10px] leading-relaxed truncate font-mono mb-2">
+                            ${repo.description || 'No description provided.'}
+                        </p>
+                        <div class="flex justify-between items-center text-[9px] font-mono text-gray-500 uppercase">
+                            <span class="flex items-center gap-1">
+                                <span class="w-1.5 h-1.5 rounded-full" style="background-color: ${langColor}"></span>
+                                ${repo.language || 'Code'}
+                            </span>
+                            <span>UPDATED: ${new Date(repo.updated_at).toLocaleDateString('en-US', {month:'short', day:'numeric'})}</span>
+                        </div>
+                    </a>
+                `;
+                projectContainer.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+        // --- RENDER LANGUAGES STATS ---
+        const langContainer = document.getElementById('gh-languages-list');
+        if (langContainer) {
+            langContainer.innerHTML = '';
+            
+            // Calculate Language Counts from fetched repos
+            const langCounts = {};
+            let total = 0;
+            repos.forEach(repo => {
+                if(repo.language) {
+                    langCounts[repo.language] = (langCounts[repo.language] || 0) + 1;
+                    total++;
                 }
+            });
 
-                const activeLink = currentSectionId ? (document.querySelector(`#main-nav a[href="#${currentSectionId}"]`) || document.querySelector(`#mobile-menu a[href="#${currentSectionId}"]`)) : null;
-                activateNavLink(activeLink);
-            }, 50);
+            // Convert to array and sort
+            const languages = Object.entries(langCounts)
+                .map(([name, count]) => ({ name, percentage: Math.round((count / total) * 100) }))
+                .sort((a, b) => b.percentage - a.percentage)
+                .slice(0, 4); // Top 4 only
+
+            languages.forEach(lang => {
+                const color = getLanguageColor(lang.name);
+                const html = `
+                    <div class="group">
+                        <div class="flex justify-between mb-1">
+                            <span class="text-white group-hover:text-neo-green transition-colors">[ ${lang.name} ]</span>
+                            <span class="text-neo-green font-bold">${lang.percentage}%</span>
+                        </div>
+                        <div class="w-full h-1.5 bg-gray-800 border border-white/10 overflow-hidden">
+                            <div class="h-full bg-neo-green shadow-[0_0_10px_rgba(51,255,87,0.5)] transform origin-left transition-transform duration-1000 scale-x-0" 
+                                 style="width: ${lang.percentage}%; animation: fillBar 1s forwards ease-out;">
+                            </div>
+                        </div>
+                    </div>
+                `;
+                langContainer.insertAdjacentHTML('beforeend', html);
+            });
+        }
+
+    } catch (error) {
+        console.error('Error fetching Repos:', error);
+        // Fallback UI
+        const projectContainer = document.getElementById('gh-projects-list');
+        if(projectContainer) projectContainer.innerHTML = '<div class="text-red-500 font-mono text-xs border border-red-500 p-2">CONNECTION_LOST: API Limit Reached</div>';
+    }
+}
+
+// Helper: Simple Color Mapper for common languages
+function getLanguageColor(lang) {
+    const colors = {
+        'JavaScript': '#f7df1e',
+        'TypeScript': '#3178c6',
+        'Python': '#3572A5',
+        'HTML': '#e34c26',
+        'CSS': '#563d7c',
+        'Java': '#b07219',
+        'C++': '#f34b7d',
+        'C': '#555555',
+        'Vue': '#41b883',
+        'React': '#61dafb'
+    };
+    return colors[lang] || '#33FF57'; // Default Neo-Green
+}
+
+// Add CSS keyframe for the bar animation if not present
+const style = document.createElement('style');
+style.innerHTML = `
+    @keyframes fillBar { to { transform: scaleX(1); } }
+`;
+document.head.appendChild(style);
+
+// Call on page load
+fetchGitHubStats();
+
+        // Scroll Reveal Logic
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        revealElements.forEach(el => revealObserver.observe(el));
+
+        // Scroll Progress Bar
+        window.onscroll = function () {
+            let winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            let height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            let scrolled = (winScroll / height) * 100;
+            document.getElementById("progressBar").style.width = scrolled + "%";
         };
-
-        window.addEventListener('scroll', onScroll);
-        document.addEventListener('DOMContentLoaded', () => {
-            onScroll();
-            initializeAnimations();
-            initializeGeminiFeatures();
-        });
-
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                const targetId = this.getAttribute('href');
-                if (targetId && targetId.startsWith('#') && targetId.length > 1) {
-                    const targetElement = document.querySelector(targetId);
-                    if (!targetElement) {
-                        console.warn(`Smooth scroll target not found: ${targetId}`);
-                        return;
-                    }
-                    if (mobileMenu && !mobileMenu.classList.contains('hidden') && menuButton) {
-                        menuButton.setAttribute('aria-expanded', 'false');
-                        mobileMenu.classList.add('hidden');
-                    }
-                }
-            });
-        });
-
-        // --- Footer Year ---
-        const currentYearElement = document.getElementById('current-year');
-        if (currentYearElement) {
-            currentYearElement.textContent = new Date().getFullYear();
-        }
-
-        // --- Initialize Particles.js ---
-        if (typeof particlesJS !== 'undefined') {
-            particlesJS('particles-js', {
-                "particles": {
-                    "number": { "value": 100, "density": { "enable": true, "value_area": 800 } },
-                    "color": { "value": ["#aaaaaa", "#bbbbbb", "#cccccc"] },
-                    "shape": { "type": "triangle", "stroke": { "width": 0, "color": "#000000" }, "polygon": { "nb_sides": 4 } },
-                    "opacity": { "value": 0.6, "random": true, "anim": { "enable": true, "speed": 0.5, "opacity_min": 0.2, "sync": false } },
-                    "size": { "value": 2.5, "random": true, "anim": { "enable": true, "speed": 2, "size_min": 0.5, "sync": false } },
-                    "line_linked": { "enable": true, "distance": 110, "color": "#999999", "opacity": 0.35, "width": 1 },
-                    "move": { "enable": true, "speed": 1.2, "direction": "none", "random": true, "straight": false, "out_mode": "out", "bounce": false, "attract": { "enable": true, "rotateX": 500, "rotateY": 1000 } }
-                },
-                "interactivity": {
-                    "detect_on": "canvas",
-                    "events": { "onhover": { "enable": true, "mode": "repulse" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                    "modes": { "grab": { "distance": 130, "line_linked": { "opacity": 0.3 } }, "bubble": { "distance": 200, "size": 0, "duration": 2, "opacity": 0 }, "repulse": { "distance": 70, "duration": 0.4 }, "push": { "particles_nb": 3 }, "remove": { "particles_nb": 2 } }
-                },
-                "retina_detect": true
-            });
-        } else { console.error("particles.js library not loaded. Hero background may not render correctly."); }
-
-        // --- Anime.js Animations ---
-        function initializeAnimations() {
-            if (typeof anime === 'undefined') {
-                console.error("anime.js library not loaded. Animations will not work.");
-                return;
-            }
-
-            anime({
-                targets: '.hero-content-wrapper > *:not(.hero-cta)',
-                opacity: [0, 1], translateY: [20, 0],
-                delay: anime.stagger(150, {start: 300}),
-                duration: 800, easing: 'easeOutExpo'
-            });
-            anime({
-                targets: '.hero-cta',
-                opacity: [0, 1], translateY: [20,0],
-                delay: 750,
-                duration: 800, easing: 'easeOutExpo'
-            });
-            anime({
-                targets: '.animate-on-load.logo-name, .animate-on-load.nav-link',
-                opacity: [0, 1], translateY: [-20, 0],
-                delay: anime.stagger(100, { start: 100 }),
-                duration: 700, easing: 'easeOutCubic'
-            });
-
-            const heroTitle = document.querySelector('.animate-letters.hero-title');
-            if (heroTitle) {
-                heroTitle.innerHTML = heroTitle.textContent.replace(/([^\s])/g, "<span class='letter'>$&</span>");
-                anime.timeline({ loop: false })
-                    .add({
-                        targets: '.animate-letters.hero-title .letter',
-                        translateY: ["1.2em", 0], translateX: ["0.6em", 0], translateZ: 0,
-                        rotateZ: [200, 0], opacity: [0, 1],
-                        duration: 850, easing: "easeOutExpo",
-                        delay: anime.stagger(60, { start: 600 })
-                    });
-            } else { console.warn("Hero title element for letter animation not found."); }
-
-            const observerOptions = {
-                root: null,
-                rootMargin: '0px 0px -100px 0px',
-                threshold: 0.1
-            };
-
-            const observerCallback = (entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const target = entry.target;
-
-                        if (target.classList.contains('animate-on-scroll')) {
-                            if (!target.classList.contains('animating')) {
-                                target.classList.add('animating');
-                                anime({
-                                    targets: target,
-                                    translateY: [40, 0],
-                                    opacity: [0, 1],
-                                    scale: [0.97, 1],
-                                    duration: 1000,
-                                    easing: 'easeOutExpo',
-                                    delay: target.dataset.delay ? parseInt(target.dataset.delay) : 0,
-                                    complete: () => target.classList.remove('animating')
-                                });
-                            }
-                            observer.unobserve(target);
-                        }
-                        
-                        // --- MODIFIED: Timeline Animation Logic ---
-                        if (target.classList.contains('timeline-container') && !target.classList.contains('animating')) {
-                            target.classList.add('animating');
-                            
-                            // For mobile, use the old, simpler animation
-                            if (window.innerWidth <= 768) {
-                                anime({
-                                    targets: '.timeline-item',
-                                    opacity: [0, 1],
-                                    translateX: [-30, 0],
-                                    delay: anime.stagger(250, {start: 500}),
-                                    duration: 800,
-                                    easing: 'easeOutExpo',
-                                });
-                            } else {
-                                // --- NEW: SVG Path Animation for Desktop ---
-                                const path = anime.path('#timeline-path');
-                                const pathEl = document.querySelector('#timeline-path');
-                                if (!pathEl) return;
-                                const pathLength = pathEl.getTotalLength();
-                                pathEl.style.strokeDasharray = pathLength;
-                                pathEl.style.strokeDashoffset = pathLength;
-                                
-                                const careerPathAnimation = anime.timeline({
-                                    easing: 'easeOutExpo',
-                                    duration: 4000
-                                });
-
-                                careerPathAnimation
-                                    .add({
-                                        targets: '#timeline-path',
-                                        strokeDashoffset: [pathLength, 0],
-                                        easing: 'easeInOutSine',
-                                        duration: 4000
-                                    })
-                                    .add({
-                                        targets: '#path-marker',
-                                        translateX: path('x'),
-                                        translateY: path('y'),
-                                        opacity: [0, 1, 1, 0], // Fade in, travel, fade out
-                                        easing: 'easeInOutSine',
-                                        duration: 4000
-                                    }, 0)
-                                    .add({
-                                        targets: '.timeline-item',
-                                        opacity: [0, 1],
-                                        translateX: (el) => {
-                                            return el.classList.contains('timeline-left') ? [-40, 0] : [40, 0];
-                                        },
-                                        delay: (el, i) => 500 + i * 800, // Stagger items to appear along the path
-                                        duration: 1000,
-                                    }, 0);
-                            }
-                            observer.unobserve(target);
-                        }
-                        
-                        if (target.classList.contains('tech-icon-grid') && !target.classList.contains('animating')) {
-                            target.classList.add('animating');
-                            anime({
-                                targets: target.querySelectorAll('.tech-icon'),
-                                opacity: [0,1],
-                                translateY: [30, 0],
-                                scale: [0.9, 1],
-                                duration: 700,
-                                delay: anime.stagger(80, {from: 'start'}),
-                                easing: 'easeOutCubic',
-                                complete: () => target.classList.remove('animating')
-                            });
-                            observer.unobserve(target);
-                        }
-
-                        if (target.classList.contains('section-title') && !target.classList.contains('animating-underline-direct')) {
-                             target.classList.add('animating-underline-direct', 'animate-underline');
-                             anime({
-                                targets: target, opacity: [0, 1], translateY: [20, 0],
-                                duration: 700, easing: 'easeOutCubic',
-                                complete: () => target.classList.remove('animating-underline-direct')
-                            });
-                            observer.unobserve(target);
-                        }
-
-                        if (target.classList.contains('skill-bar-fill') && !target.classList.contains('animating')) {
-                            target.classList.add('animating');
-                            const level = target.dataset.level || '0%';
-                            anime({
-                                targets: target,
-                                width: level,
-                                duration: 1500,
-                                easing: 'easeInOutQuart',
-                                delay: 250,
-                                complete: () => target.classList.remove('animating')
-                            });
-                            observer.unobserve(target);
-                        }
-                    }
-                });
-            };
-
-            const scrollObserver = new IntersectionObserver(observerCallback, observerOptions);
-            document.querySelectorAll('.animate-on-scroll, .skill-bar-fill, .tech-icon-grid, .section-title, .timeline-container').forEach(el => {
-                if (el.classList.contains('animate-on-scroll')) {
-                     el.style.opacity = '0';
-                }
-                scrollObserver.observe(el);
-            });
-        }
-
-        // --- Project Modal & Certificate Modal Functionality ---
-        const modalOverlay = document.getElementById('project-modal-overlay');
-        const modalContent = document.getElementById('project-modal-content');
-        const modalCloseButton = document.getElementById('modal-close-button');
-        const modalProjectImage = document.getElementById('modal-project-image');
-        const modalProjectTitle = document.getElementById('modal-project-title');
-        const modalProjectDescription = document.getElementById('modal-project-description');
-        const modalLiveSiteLink = document.getElementById('modal-live-site-link');
-        const modalSourceCodeLink = document.getElementById('modal-source-code-link');
-        
-        const viewProjectLinks = document.querySelectorAll('.view-project-details');
-        const viewCertificateButtons = document.querySelectorAll('.view-certificate-button');
-
-
-        function openModal(title, imageUrl, description, liveLink = "#", codeLink = "#", isCertificate = false) {
-            if (!modalProjectTitle || !modalProjectImage || !modalProjectDescription || !modalOverlay || !modalLiveSiteLink || !modalSourceCodeLink || !modalContent) {
-                console.error("One or more modal elements not found in the DOM.");
-                return;
-            }
-            modalProjectTitle.textContent = title;
-            modalProjectImage.src = imageUrl;
-            modalProjectImage.alt = title + (isCertificate ? " certificate" : " project image");
-            modalProjectDescription.innerHTML = description;
-            modalProjectDescription.dataset.original = description; // Store original for reset
-
-            const projectLinksDiv = modalContent.querySelector('.modal-project-links');
-            const enhanceBtn = document.getElementById('enhance-description-btn');
-
-            if (isCertificate) {
-                if(projectLinksDiv) projectLinksDiv.style.display = 'none';
-                if(enhanceBtn) enhanceBtn.style.display = 'none';
-            } else {
-                if(projectLinksDiv) projectLinksDiv.style.display = 'flex';
-                if(enhanceBtn) enhanceBtn.style.display = 'inline-flex';
-                
-                if (liveLink && liveLink !== "#" && liveLink !== "null" && liveLink !== "undefined") {
-                    modalLiveSiteLink.href = liveLink;
-                    modalLiveSiteLink.style.display = 'inline-flex';
-                } else {
-                    modalLiveSiteLink.style.display = 'none';
-                }
-
-                if (codeLink && codeLink !== "#" && codeLink !== "null" && codeLink !== "undefined") {
-                    modalSourceCodeLink.href = codeLink;
-                    modalSourceCodeLink.style.display = 'inline-flex';
-                } else {
-                    modalSourceCodeLink.style.display = 'none';
-                }
-            }
-            
-            modalOverlay.classList.add('active');
-            siteBody.classList.add('modal-open');
-            modalContent.scrollTop = 0;
-        }
-
-        function closeModal(overlay) {
-            if (!overlay) return;
-            overlay.classList.remove('active');
-            siteBody.classList.remove('modal-open');
-        }
-
-        viewProjectLinks.forEach(link => {
-            link.addEventListener('click', function(event) {
-                event.preventDefault();
-                const title = this.dataset.title;
-                const image = this.dataset.image;
-                const description = this.dataset.description;
-                const liveLink = this.dataset.liveLink;
-                const codeLink = this.dataset.codeLink;
-                openModal(title, image, description, liveLink, codeLink, false);
-            });
-        });
-
-        viewCertificateButtons.forEach(button => {
-            button.addEventListener('click', function(event) {
-                event.preventDefault();
-                const title = this.dataset.certificateTitle;
-                const image = this.dataset.certificateImage;
-                const details = this.dataset.certificateDetails;
-                openModal(title, image, details, null, null, true);
-            });
-        });
-
-
-        if (modalCloseButton) {
-            modalCloseButton.addEventListener('click', () => closeModal(modalOverlay));
-        }
-        if (modalOverlay) {
-            modalOverlay.addEventListener('click', function(event) {
-                if (event.target === modalOverlay) { closeModal(modalOverlay); }
-            });
-        }
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape' && modalOverlay && modalOverlay.classList.contains('active')) {
-                closeModal(modalOverlay);
-            }
-        });
-
-        // --- Gemini API Integration ---
-        function initializeGeminiFeatures() {
-            const apiKey = ""; // API key will be provided by the environment
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-
-            // --- Feature 1: AI Project Description Enhancer ---
-            const enhanceBtn = document.getElementById('enhance-description-btn');
-            const descriptionLoader = document.getElementById('description-loader');
-
-            enhanceBtn.addEventListener('click', async () => {
-                const descriptionP = document.getElementById('modal-project-description');
-                const originalDescription = descriptionP.dataset.original;
-                const currentDescription = descriptionP.innerHTML;
-
-                // If it's already enhanced, revert to original
-                if (enhanceBtn.textContent.includes('Revert')) {
-                    descriptionP.innerHTML = originalDescription;
-                    enhanceBtn.innerHTML = '✨ Enhance with AI';
-                    return;
-                }
-
-                const prompt = `Rewrite the following project description to be more concise and impactful for a technical recruiter. Focus on the technologies used and the outcomes achieved. Do not use markdown. Description: "${originalDescription}"`;
-                
-                enhanceBtn.disabled = true;
-                descriptionLoader.classList.remove('hidden');
-
-                try {
-                    const payload = { contents: [{ parts: [{ text: prompt }] }] };
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts.length > 0) {
-                        const enhancedText = result.candidates[0].content.parts[0].text;
-                        descriptionP.innerHTML = enhancedText;
-                        enhanceBtn.innerHTML = 'Revert to Original';
-                    } else {
-                        descriptionP.innerHTML = "Sorry, couldn't enhance the description right now.";
-                    }
-                } catch (error) {
-                    console.error("Error enhancing description:", error);
-                    descriptionP.innerHTML = "An error occurred. Please try again.";
-                } finally {
-                    enhanceBtn.disabled = false;
-                    descriptionLoader.classList.add('hidden');
-                }
-            });
-
-            // --- Feature 2: AI Assistant Chatbot ---
-            const fab = document.getElementById('ai-assistant-fab');
-            const chatOverlay = document.getElementById('ai-chat-modal-overlay');
-            const chatCloseBtn = document.getElementById('ai-chat-modal-close-button');
-            const chatMessages = document.getElementById('ai-chat-messages');
-            const chatInput = document.getElementById('ai-chat-input');
-            const chatSendBtn = document.getElementById('ai-chat-send-btn');
-            let chatHistory = [];
-            let portfolioContext = '';
-
-            function getPortfolioContext() {
-                let context = "Portfolio of SHADOW:\n\n";
-                context += "About Me:\n" + document.getElementById('about').innerText + "\n\n";
-                context += "Core Competencies:\n" + document.getElementById('skills').innerText + "\n\n";
-                context += "Tech Stack:\n" + document.getElementById('tech-stack').innerText + "\n\n";
-                context += "Projects:\n" + document.getElementById('portfolio').innerText + "\n\n";
-                context += "Experience:\n" + document.getElementById('experience').innerText + "\n\n";
-                return context;
-            }
-
-            fab.addEventListener('click', () => {
-                if (chatMessages.children.length === 0) {
-                    addMessage("Hello! I'm SHADOW's AI assistant. Ask me anything about the portfolio.", 'assistant');
-                }
-                chatOverlay.classList.add('active');
-                siteBody.classList.add('modal-open');
-                portfolioContext = getPortfolioContext();
-            });
-
-            chatCloseBtn.addEventListener('click', () => closeModal(chatOverlay));
-            chatOverlay.addEventListener('click', (e) => {
-                if (e.target === chatOverlay) closeModal(chatOverlay);
-            });
-            document.addEventListener('keydown', (e) => {
-                if (e.key === 'Escape' && chatOverlay.classList.contains('active')) {
-                    closeModal(chatOverlay);
-                }
-            });
-
-            chatSendBtn.addEventListener('click', handleSendMessage);
-            chatInput.addEventListener('keypress', (e) => {
-                if (e.key === 'Enter') {
-                    handleSendMessage();
-                }
-            });
-
-            function addMessage(text, sender) {
-                const messageDiv = document.createElement('div');
-                messageDiv.className = `chat-message ${sender}`;
-                messageDiv.textContent = text;
-                chatMessages.appendChild(messageDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-            
-            function showTypingIndicator() {
-                const typingDiv = document.createElement('div');
-                typingDiv.className = 'chat-message assistant typing-indicator';
-                typingDiv.innerHTML = '<span></span><span></span><span></span>';
-                typingDiv.id = 'typing-indicator';
-                chatMessages.appendChild(typingDiv);
-                chatMessages.scrollTop = chatMessages.scrollHeight;
-            }
-
-            function removeTypingIndicator() {
-                const indicator = document.getElementById('typing-indicator');
-                if (indicator) {
-                    indicator.remove();
-                }
-            }
-
-            async function handleSendMessage() {
-                const userInput = chatInput.value.trim();
-                if (!userInput) return;
-
-                addMessage(userInput, 'user');
-                chatInput.value = '';
-                chatSendBtn.disabled = true;
-                showTypingIndicator();
-
-                const systemPrompt = `You are a helpful and friendly AI assistant for a technologist named SHADOW. Your goal is to answer questions from visitors and recruiters based *only* on the provided portfolio information. Be conversational and concise. Here is the portfolio context:\n\n${portfolioContext}`;
-                
-                // Construct the full history for the API call
-                const fullHistory = [
-                    { role: "user", parts: [{ text: systemPrompt }] },
-                    { role: "model", parts: [{ text: "Understood. I will act as SHADOW's AI assistant and answer questions based on the provided portfolio context." }] },
-                    ...chatHistory,
-                    { role: "user", parts: [{ text: userInput }] }
-                ];
-
-                try {
-                    const payload = { contents: fullHistory };
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-                    const result = await response.json();
-                    
-                    removeTypingIndicator();
-                    
-                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content.parts.length > 0) {
-                        const assistantResponse = result.candidates[0].content.parts[0].text;
-                        addMessage(assistantResponse, 'assistant');
-                        // Update chat history for future context
-                        chatHistory.push({ role: "user", parts: [{ text: userInput }] });
-                        chatHistory.push({ role: "model", parts: [{ text: assistantResponse }] });
-                    } else {
-                        addMessage("I'm sorry, I encountered an issue. Please try asking in a different way.", 'assistant');
-                    }
-                } catch (error) {
-                    console.error("Error with AI Assistant:", error);
-                    removeTypingIndicator();
-                    addMessage("There was an error connecting to the assistant. Please check the console.", 'assistant');
-                } finally {
-                    chatSendBtn.disabled = false;
-                    chatInput.focus();
-                }
-            }
-        }
-
     </script>
-
 </body>
 </html>
